@@ -1,0 +1,44 @@
+{
+  "status": "PASS",
+  "renderer": "Nilearn plot_glass_brain",
+  "comparison": "TRD1 versus nTRD",
+  "quantity": "regional SUVR deviation",
+  "covariates": [
+    "age",
+    "sex"
+  ],
+  "reporting_threshold": "uncorrected p<.01",
+  "display_mode": "lyrz (four views)",
+  "plot_abs": false,
+  "display_colours_are_categorical": true,
+  "statistics_recomputed": false,
+  "palette": {
+    "lower_regions": "#A3C2F4",
+    "higher_non_striatopallidal_regions": "#EAD8DE",
+    "higher_putamen_pallidum": "#D2A1B1"
+  },
+  "source_result_file": "./outputs/main_analyses/01_TRD1_discovery_agesex/regional_uncorrected_p_lt_0p01.xlsx",
+  "source_result_sha256": "e267e642d074c2edf1fd0d4fd3b79b1bf9753f4d1abea4c00858bdbcc902820c",
+  "atlas": "./inputs/core/AAL3_144_space-PET_res-2_dseg.nii.gz",
+  "atlas_sha256": "6446a71e6d4ee2d7ee85a58d35039762ba10c0bf605b7ceca020ee36bac0f525",
+  "SGC_audit_source": "./outputs/main_analyses/01_TRD1_discovery_agesex/regional_all.xlsx",
+  "SGC_audit_source_sha256": "f74c12ec94892932554c12877d4713cd45e3ceeba0dc56bdd6d3fa13de42850e",
+  "palette_source": "./outputs/main_analyses/13_sensitivity_mPFC_striatopallidal_glass_brain/tables/sampled_blue_pink_colormap_anchors.csv",
+  "palette_source_sha256": "fae5adce82306d34203a763c915ab8eb7f4b1d17e5259468404c35fbf581ab33",
+  "checks": {
+    "formal_p_lt_0p01_ROI_set_used_without_preselection": true,
+    "all_displayed_results_meet_uncorrected_p_lt_0p01": true,
+    "direction_matches_TRD1_minus_nTRD_raw_mean_difference": true,
+    "bilateral_SGC_does_not_meet_p_lt_0p01": true,
+    "palette_matches_configured_hex_values": true,
+    "all_selected_AAL3_labels_nonempty": true,
+    "all_png_pdf_svg_outputs_exist": true
+  },
+  "outputs": {
+    "PNG": "./outputs/main_analyses/15_nonTRD_TRD_significant_regional_SUVR_glass_brain/figures/Figure_TRD_vs_nonTRD_significant_regional_SUVR_combined_nilearn_glass_brain.png",
+    "PDF": "./outputs/main_analyses/15_nonTRD_TRD_significant_regional_SUVR_glass_brain/figures/Figure_TRD_vs_nonTRD_significant_regional_SUVR_combined_nilearn_glass_brain.pdf",
+    "SVG": "./outputs/main_analyses/15_nonTRD_TRD_significant_regional_SUVR_glass_brain/figures/Figure_TRD_vs_nonTRD_significant_regional_SUVR_combined_nilearn_glass_brain.svg",
+    "values": "./outputs/main_analyses/15_nonTRD_TRD_significant_regional_SUVR_glass_brain/tables/TRD1_vs_nTRD_regional_SUVR_p_lt_0p01_figure_values.csv",
+    "SGC_threshold_audit": "./outputs/main_analyses/15_nonTRD_TRD_significant_regional_SUVR_glass_brain/tables/bilateral_SGC_regional_SUVR_p_threshold_audit.csv"
+  }
+}

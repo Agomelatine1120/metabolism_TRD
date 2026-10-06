@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "participants": {
+    "HC": 23,
+    "nTRD": 25,
+    "TRD1": 35,
+    "rTMS": 34,
+    "iTBS": 37,
+    "sham": 33
+  },
+  "sessions": 291,
+  "input_policy": "Only final analysed participants and sessions are included",
+  "BOLD": "AAL3 spatial-mean time series without individual GM masking, represented by session-level GCMI matrices",
+  "models": {
+    "HC_reference": "age + sex",
+    "group": "age + sex",
+    "sensitivity": "age + sex + baseline HDRS-17",
+    "paired": "paired t-test without covariates",
+    "group_by_time": "age + sex",
+    "clinical": "partial Spearman controlling age + sex"
+  }
+}

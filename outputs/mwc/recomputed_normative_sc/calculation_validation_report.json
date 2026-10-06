@@ -1,0 +1,44 @@
+{
+  "status": "PASS",
+  "generated_at_utc": "2026-10-06T16:40:23.282435+00:00",
+  "method": {
+    "metric": "MwC only",
+    "structural_connectome": "dTOR-985 group-normative direct streamline-count top-10% mask",
+    "structural_edges": 1030,
+    "functional_weight": "bias-corrected GCMI >= 0.01 bits within fixed SC mask",
+    "normalization": "row-normalize each non-isolated target",
+    "formula": "MwC = 100 * row-normalized SC-constrained GCMI @ PET wbSUVR",
+    "target_extraction": "26 targets selected after complete AAL3-144 computation",
+    "missing_policy": "isolated nodes remain missing; no imputation or zero fill"
+  },
+  "checks": {
+    "sessions_291": true,
+    "retained_AAL3_nodes_144": true,
+    "possible_undirected_edges_10296": true,
+    "fixed_dTOR_normative_SC_edges_1030": true,
+    "structural_mask_symmetric": true,
+    "structural_mask_diagonal_zero": true,
+    "gcmi_floor_bits_0p01": true,
+    "row_normalization_error_below_1e_12": true,
+    "all_144_nodes_computed_before_26_extraction": true,
+    "isolated_nodes_remain_missing": true,
+    "full_144_matches_validated_reference": true,
+    "selected_26_matches_validated_reference": true
+  },
+  "audit": {
+    "maximum_abs_error_vs_reference_full_144": 1.4210854715202004e-14,
+    "maximum_abs_error_vs_reference_selected_26": 1.4210854715202004e-14,
+    "maximum_valid_row_sum_error": 2.220446049250313e-16,
+    "total_missing_MwC_cells": 2557
+  },
+  "inputs": {
+    "session_bundle": "inputs/mwc/normative_sc/session_gcmi_pet_AAL3_144.npz",
+    "session_bundle_sha256": "5c941f7d63399b581aa9eefd2d6f4bc0add2ae0152eb8c1e8e249fff9e834066",
+    "structural_mask": "inputs/mwc/normative_sc/normative_SC_top10_mask.npz",
+    "structural_mask_sha256": "498182956c2ec5d7513d09a3f52155e15093a993c5e56f0b2ddc7ca3e3ce3e9d"
+  },
+  "outputs": {
+    "full_144": "outputs/mwc/recomputed_normative_sc/subject_level_AAL3_144_normativeSC10_MwC_wide.csv.gz",
+    "selected_26": "outputs/mwc/recomputed_normative_sc/subject_level_corticolimbic26_normativeSC10_MwC_wide.csv"
+  }
+}

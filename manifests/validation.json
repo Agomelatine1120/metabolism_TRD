@@ -1,0 +1,181 @@
+{
+  "status": "PASS",
+  "population": {
+    "HC": 23,
+    "nTRD": 25,
+    "TRD1": 35,
+    "rTMS": 34,
+    "iTBS": 37,
+    "sham": 33
+  },
+  "sessions": 291,
+  "models": {
+    "HC_reference": "age + sex",
+    "group": "age + sex",
+    "sensitivity": "age + sex + baseline HDRS-17",
+    "paired": "paired t-test without covariates",
+    "group_by_time": "age + sex",
+    "clinical": "partial Spearman controlling age + sex"
+  },
+  "results": {
+    "primary_p_lt_0p01": {
+      "regional_SUVR": 7,
+      "metabolic_connectivity": 22,
+      "MwC": 2
+    },
+    "sensitivity_p_lt_0p05": {
+      "regional_SUVR": 5,
+      "metabolic_connectivity": 17,
+      "MwC": 2
+    },
+    "active_paired_p_lt_0p01_edges": {
+      "iTBS": 3,
+      "rTMS": 3
+    }
+  },
+  "checks": {
+    "clinical_population": true,
+    "roster_population": true,
+    "pet_input": true,
+    "gcmi_input": true,
+    "roi_definition": true,
+    "analysis_contract": true,
+    "primary_significance_counts": true,
+    "sensitivity_significance_counts": true,
+    "dynamic_longitudinal_selection": true,
+    "required_figures": true,
+    "executed_notebooks": true,
+    "clean_file_tree": true,
+    "no_conversion_tools": true
+  },
+  "notebooks": [
+    {
+      "notebook": "notebooks/00_run_all_steps.ipynb",
+      "code_cells": 17,
+      "executed_code_cells": 17,
+      "stored_outputs": 73,
+      "errors": 0,
+      "results_preview_last": true
+    },
+    {
+      "notebook": "notebooks/01_main_01_setup_load.ipynb",
+      "code_cells": 8,
+      "executed_code_cells": 8,
+      "stored_outputs": 8,
+      "errors": 0,
+      "results_preview_last": true
+    },
+    {
+      "notebook": "notebooks/01_mwc_01_setup_recompute.ipynb",
+      "code_cells": 5,
+      "executed_code_cells": 5,
+      "stored_outputs": 7,
+      "errors": 0,
+      "results_preview_last": true
+    },
+    {
+      "notebook": "notebooks/02_main_02_demographics_hc_reference.ipynb",
+      "code_cells": 5,
+      "executed_code_cells": 5,
+      "stored_outputs": 15,
+      "errors": 0,
+      "results_preview_last": true
+    },
+    {
+      "notebook": "notebooks/02_mwc_02_subject_level.ipynb",
+      "code_cells": 4,
+      "executed_code_cells": 4,
+      "stored_outputs": 9,
+      "errors": 0,
+      "results_preview_last": true
+    },
+    {
+      "notebook": "notebooks/03_main_03_baseline_discovery_sensitivity.ipynb",
+      "code_cells": 6,
+      "executed_code_cells": 6,
+      "stored_outputs": 20,
+      "errors": 0,
+      "results_preview_last": true
+    },
+    {
+      "notebook": "notebooks/03_mwc_03_deviation_spatial.ipynb",
+      "code_cells": 4,
+      "executed_code_cells": 4,
+      "stored_outputs": 19,
+      "errors": 0,
+      "results_preview_last": true
+    },
+    {
+      "notebook": "notebooks/04_main_04_longitudinal_paired_clinical.ipynb",
+      "code_cells": 4,
+      "executed_code_cells": 4,
+      "stored_outputs": 25,
+      "errors": 0,
+      "results_preview_last": true
+    },
+    {
+      "notebook": "notebooks/04_mwc_04_group_analysis.ipynb",
+      "code_cells": 4,
+      "executed_code_cells": 4,
+      "stored_outputs": 13,
+      "errors": 0,
+      "results_preview_last": true
+    },
+    {
+      "notebook": "notebooks/05_main_05_interactions_mwc.ipynb",
+      "code_cells": 5,
+      "executed_code_cells": 5,
+      "stored_outputs": 22,
+      "errors": 0,
+      "results_preview_last": true
+    },
+    {
+      "notebook": "notebooks/05_mwc_05_figures_audit.ipynb",
+      "code_cells": 5,
+      "executed_code_cells": 5,
+      "stored_outputs": 19,
+      "errors": 0,
+      "results_preview_last": true
+    },
+    {
+      "notebook": "notebooks/06_main_06_spatial_replication_report.ipynb",
+      "code_cells": 5,
+      "executed_code_cells": 5,
+      "stored_outputs": 29,
+      "errors": 0,
+      "results_preview_last": true
+    },
+    {
+      "notebook": "notebooks/07_main_07_core_figures_heatmaps.ipynb",
+      "code_cells": 5,
+      "executed_code_cells": 5,
+      "stored_outputs": 40,
+      "errors": 0,
+      "results_preview_last": true
+    },
+    {
+      "notebook": "notebooks/08_main_08_circle_diagrams_checks.ipynb",
+      "code_cells": 5,
+      "executed_code_cells": 5,
+      "stored_outputs": 46,
+      "errors": 0,
+      "results_preview_last": true
+    },
+    {
+      "notebook": "notebooks/09_main_09_five_global_indexes.ipynb",
+      "code_cells": 17,
+      "executed_code_cells": 17,
+      "stored_outputs": 45,
+      "errors": 0,
+      "results_preview_last": true
+    },
+    {
+      "notebook": "notebooks/10_main_10_longitudinal_sgc_figures_audit.ipynb",
+      "code_cells": 6,
+      "executed_code_cells": 6,
+      "stored_outputs": 67,
+      "errors": 0,
+      "results_preview_last": true
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "scope": "All MwC regions selected dynamically at HC3 uncorrected p < 0.01",
+  "selection_source": "./outputs/main_analyses/07_age_sex_adjusted_MwC/tables/baseline_nTRD_vs_TRD1_adjusted_all_26.csv",
+  "selection_source_sha256": "5b9ca846712a1e32ff34c8a0a465e0041c60b5100f02d6d256725f39e02d1d8e",
+  "selection_threshold": 0.01,
+  "selected_region_count": 2,
+  "selected_AAL3_IDs_in_p_order": [
+    5,
+    3
+  ],
+  "selected_regions_in_p_order": [
+    "Lt. MFG",
+    "Lt. SFG"
+  ],
+  "atlas": "./inputs/core/AAL3_144_space-PET_res-2_dseg.nii.gz",
+  "atlas_sha256": "6446a71e6d4ee2d7ee85a58d35039762ba10c0bf605b7ceca020ee36bac0f525",
+  "atlas_shape": [
+    79,
+    95,
+    79
+  ],
+  "union_voxel_count": 9377,
+  "rendering": {
+    "library": "nilearn.plotting.plot_glass_brain",
+    "display_mode": "lyrz",
+    "categorical_colour_encoding": true,
+    "effect_magnitude_not_encoded": true,
+    "lower_MwC_palette": [
+      "#BACFEA",
+      "#9AC3F8"
+    ],
+    "higher_MwC_palette": [
+      "#EAD8DE",
+      "#D2A1B1"
+    ]
+  },
+  "checks": {
+    "selection_is_dynamic_p_lt_0p01": true,
+    "at_least_one_region_selected": true,
+    "all_selected_labels_nonempty": true,
+    "union_count_matches_sum": true,
+    "selected_table_matches_rendered_labels": true,
+    "PNG_exists": true,
+    "PDF_exists": true,
+    "SVG_exists": true
+  },
+  "outputs": {
+    "PNG": "./outputs/main_analyses/11_SGC_26ROI_figures/figures/Figure_TRD_vs_nonTRD_significant_MwC_nilearn_glass_brain.png",
+    "PDF": "./outputs/main_analyses/11_SGC_26ROI_figures/figures/Figure_TRD_vs_nonTRD_significant_MwC_nilearn_glass_brain.pdf",
+    "SVG": "./outputs/main_analyses/11_SGC_26ROI_figures/figures/Figure_TRD_vs_nonTRD_significant_MwC_nilearn_glass_brain.svg",
+    "NIfTI_mask": "./outputs/main_analyses/11_SGC_26ROI_figures/masks/AAL3_MwC_p_lt_0p01_union_binary.nii.gz",
+    "NIfTI_categorical_colour_map": "./outputs/main_analyses/11_SGC_26ROI_figures/masks/AAL3_MwC_p_lt_0p01_categorical_labels.nii.gz",
+    "region_table": "./outputs/main_analyses/11_SGC_26ROI_figures/tables/TRD1_vs_nTRD_MwC_p_lt_0p01_figure_values.csv"
+  }
+}

@@ -1,0 +1,23 @@
+AAL3_ID,ROI,voxel_count_on_PET_grid,exclusion_reason
+121,Thal_AV_L,19,atlas_voxels_on_pet_grid < 30
+122,Thal_AV_R,25,atlas_voxels_on_pet_grid < 30
+123,Thal_LP_L,25,atlas_voxels_on_pet_grid < 30
+124,Thal_LP_R,28,atlas_voxels_on_pet_grid < 30
+133,Thal_Re_L,2,atlas_voxels_on_pet_grid < 30
+134,Thal_Re_R,1,atlas_voxels_on_pet_grid < 30
+141,Thal_MGN_L,18,atlas_voxels_on_pet_grid < 30
+142,Thal_MGN_R,14,atlas_voxels_on_pet_grid < 30
+149,Thal_PuL_L,27,atlas_voxels_on_pet_grid < 30
+150,Thal_PuL_R,27,atlas_voxels_on_pet_grid < 30
+159,VTA_L,10,atlas_voxels_on_pet_grid < 30
+160,VTA_R,9,atlas_voxels_on_pet_grid < 30
+161,SN_pc_L,32,insufficient_GM_support_in_over_91pct_sessions
+162,SN_pc_R,33,insufficient_GM_support_in_over_91pct_sessions
+163,SN_pr_L,53,insufficient_GM_support_in_over_91pct_sessions
+164,SN_pr_R,60,insufficient_GM_support_in_over_91pct_sessions
+165,Red_N_L,57,insufficient_GM_support_in_over_91pct_sessions
+166,Red_N_R,58,insufficient_GM_support_in_over_91pct_sessions
+167,LC_L,5,atlas_voxels_on_pet_grid < 30
+168,LC_R,5,atlas_voxels_on_pet_grid < 30
+169,Raphe_D,18,atlas_voxels_on_pet_grid < 30
+170,Raphe_M,6,atlas_voxels_on_pet_grid < 30

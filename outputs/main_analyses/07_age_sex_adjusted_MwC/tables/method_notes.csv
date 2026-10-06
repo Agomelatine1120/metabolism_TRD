@@ -1,0 +1,11 @@
+topic,specification
+Atlas/MwC universe,MwC computed in all 144 retained AAL3 nodes; 26 target columns extracted afterward
+Structural constraint,"dTOR-985 group-normative direct streamline-count top-10% mask; 1,030 undirected edges"
+Baseline group model,"HC3 OLS, TRD1 minus nTRD, adjusted for age + sex; BH-FDR across 26 targets"
+Paired pre-post,Paired t test of post minus pre; static covariates are not entered; BH-FDR across 26 targets
+Group-by-time,"HC3 OLS on individual post-minus-pre change, active arm minus sham, adjusted for age + sex; BH-FDR across 26 targets"
+HDRS paired-significant subset,Only targets with paired uncorrected P<.05 enter partial Spearman; age + sex covariates; BH-FDR within selected targets
+HDRS all-26 sensitivity,"Exploratory partial Spearman for every target, age + sex covariates; BH-FDR across 26 targets"
+HDRS sign,HDRS improvement = pre minus post (positive is improvement); MwC change = post minus pre HC z
+Missing values,Subjects paired before ROI-wise complete-pair analysis; no imputation and no zero fill
+Inference warning,Nominal P<.05 rows are explicitly uncorrected unless q<.05 is also shown

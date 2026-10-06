@@ -1,0 +1,6 @@
+palette,expected_hex,actual_hex,role,exact_pixel_match
+blue,#FFFFFF,#FFFFFF,zero/background,True
+blue,#BECFE8,#BECFE8,pale modal ROI fill,True
+blue,#A3C2F4,#A3C2F4,saturated modal ROI fill,True
+pink,#EAD8DE,#EAD8DE,pale modal ROI fill,True
+pink,#D2A1B1,#D2A1B1,deep modal ROI fill,True

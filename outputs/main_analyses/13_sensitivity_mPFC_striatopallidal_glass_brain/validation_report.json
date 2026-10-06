@@ -1,0 +1,139 @@
+{
+  "status": "PASS",
+  "scope": "Bilateral vmPFC, dmPFC, putamen and pallidum coloured by the formal sensitivity-adjusted regional-SUVR group beta",
+  "comparison": "TRD1 minus nTRD",
+  "covariates": [
+    "age",
+    "sex",
+    "baseline HDRS-17"
+  ],
+  "all_eight_prespecified_ROIs_displayed": true,
+  "display_p_threshold_applied": false,
+  "atlas": "./inputs/core/AAL3_144_space-PET_res-2_dseg.nii.gz",
+  "atlas_sha256": "6446a71e6d4ee2d7ee85a58d35039762ba10c0bf605b7ceca020ee36bac0f525",
+  "atlas_shape": [
+    79,
+    95,
+    79
+  ],
+  "atlas_affine": [
+    [
+      -2.0,
+      0.0,
+      0.0,
+      78.0
+    ],
+    [
+      0.0,
+      2.0,
+      0.0,
+      -112.0
+    ],
+    [
+      0.0,
+      0.0,
+      2.0,
+      -70.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "result_table": "./outputs/main_analyses/11_SGC_26ROI_figures/tables/baseline_severity_adjusted_TRD1_vs_nTRD_regional26_SGC.csv",
+  "result_table_sha256": "b5c79d72e51271102ce9b7b0913b7658f4df2571026fe2513037a7e8be3f5077",
+  "nilearn_version": "0.12.1",
+  "rendering": {
+    "function": "nilearn.plotting.plot_glass_brain",
+    "display_mode": "lyrz",
+    "plot_abs": false,
+    "threshold": 1e-06,
+    "vmin": -2.4,
+    "vmax": 2.4,
+    "symmetric_cbar": true,
+    "resampling_interpolation": "nearest",
+    "colormap": "ColorCET CET_D1A perceptually uniform blue-red diverging",
+    "negative_colour": "blue (lower regional SUVR in TRD)",
+    "positive_colour": "red (higher regional SUVR in TRD)"
+  },
+  "AAL3_labels": {
+    "21": {
+      "ROI": "AAL3_021_Frontal_Med_Orb_L",
+      "display_label": "Lt. vmPFC",
+      "adjusted_beta": -1.120607035160371,
+      "p_uncorrected": 0.0965510469038479,
+      "voxel_count": 719
+    },
+    "22": {
+      "ROI": "AAL3_022_Frontal_Med_Orb_R",
+      "display_label": "Rt. vmPFC",
+      "adjusted_beta": -0.6444143975187147,
+      "p_uncorrected": 0.1789164405796003,
+      "voxel_count": 856
+    },
+    "19": {
+      "ROI": "AAL3_019_Frontal_Sup_Medial_L",
+      "display_label": "Lt. dmPFC",
+      "adjusted_beta": -1.1453133097392671,
+      "p_uncorrected": 0.0313611314987883,
+      "voxel_count": 2992
+    },
+    "20": {
+      "ROI": "AAL3_020_Frontal_Sup_Medial_R",
+      "display_label": "Rt. dmPFC",
+      "adjusted_beta": -0.8810810865431887,
+      "p_uncorrected": 0.1217280448164081,
+      "voxel_count": 2134
+    },
+    "77": {
+      "ROI": "AAL3_077_Putamen_L",
+      "display_label": "Lt. putamen",
+      "adjusted_beta": 1.4556601957768924,
+      "p_uncorrected": 0.0301672406218684,
+      "voxel_count": 293
+    },
+    "78": {
+      "ROI": "AAL3_078_Putamen_R",
+      "display_label": "Rt. putamen",
+      "adjusted_beta": 2.365288031128975,
+      "p_uncorrected": 0.0017686081083407,
+      "voxel_count": 280
+    },
+    "79": {
+      "ROI": "AAL3_079_Pallidum_L",
+      "display_label": "Lt. pallidum",
+      "adjusted_beta": 1.2338744623214062,
+      "p_uncorrected": 0.0154103389880727,
+      "voxel_count": 225
+    },
+    "80": {
+      "ROI": "AAL3_080_Pallidum_R",
+      "display_label": "Rt. pallidum",
+      "adjusted_beta": 1.71763538369992,
+      "p_uncorrected": 0.00571379398164,
+      "voxel_count": 249
+    }
+  },
+  "checks": {
+    "all_target_labels_nonempty": true,
+    "all_target_values_encoded_exactly": true,
+    "observed_mask_voxels_match_label_sum": true,
+    "outside_observed_mask_is_zero": true,
+    "PNG_exists": true,
+    "PDF_exists": true,
+    "SVG_exists": true,
+    "value_map_exists": true,
+    "observed_mask_exists": true,
+    "value_table_exists": true
+  },
+  "outputs": {
+    "PNG": "./outputs/main_analyses/13_sensitivity_mPFC_striatopallidal_glass_brain/figures/Figure_sensitivity_adjusted_mPFC_striatopallidal_regional_SUVR_nilearn_glass_brain.png",
+    "PDF": "./outputs/main_analyses/13_sensitivity_mPFC_striatopallidal_glass_brain/figures/Figure_sensitivity_adjusted_mPFC_striatopallidal_regional_SUVR_nilearn_glass_brain.pdf",
+    "SVG": "./outputs/main_analyses/13_sensitivity_mPFC_striatopallidal_glass_brain/figures/Figure_sensitivity_adjusted_mPFC_striatopallidal_regional_SUVR_nilearn_glass_brain.svg",
+    "regional_SUVR_value_map": "./outputs/main_analyses/13_sensitivity_mPFC_striatopallidal_glass_brain/masks/AAL3_bilateral_vmPFC_dmPFC_putamen_pallidum_sensitivity_adjusted_regional_SUVR_beta.nii.gz",
+    "observed_ROI_mask": "./outputs/main_analyses/13_sensitivity_mPFC_striatopallidal_glass_brain/masks/AAL3_bilateral_vmPFC_dmPFC_putamen_pallidum_observed_mask.nii.gz",
+    "figure_input_values": "./outputs/main_analyses/13_sensitivity_mPFC_striatopallidal_glass_brain/tables/sensitivity_adjusted_mPFC_striatopallidal_regional_SUVR_values.csv"
+  }
+}

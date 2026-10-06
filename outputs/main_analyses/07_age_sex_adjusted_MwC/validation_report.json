@@ -1,0 +1,119 @@
+{
+  "status": "PASS",
+  "generated_at_utc": "2026-10-06T17:24:47.884920+00:00",
+  "analysis": "Complete AAL3 normative-SC MwC baseline and longitudinal analysis",
+  "scope": {
+    "metric": "MwC only",
+    "atlas_universe": "144 retained AAL3 nodes",
+    "display_targets": 26,
+    "SC": "dTOR-985 group-normative direct-count top-10% mask; 1,030 undirected edges",
+    "excluded_metrics": [
+      "fDC",
+      "mDC",
+      "wDC"
+    ],
+    "missing_policy": "pair subjects first; ROI-wise complete pairs; no imputation or zero fill"
+  },
+  "sample": {
+    "HC_reference": 23,
+    "iTBS": 37,
+    "rTMS": 34,
+    "sham": 33
+  },
+  "checks": {
+    "upstream_AAL3_144_validation_PASS": true,
+    "all_144_before_26_extraction": true,
+    "fixed_dTOR_normative_SC_edges_1030": true,
+    "baseline_HC_n_23": true,
+    "input_HC_adjusted_mean_zero_SD_one": true,
+    "paired_sample_counts_match": true,
+    "baseline_26_results": true,
+    "paired_78_results": true,
+    "interaction_52_results": true,
+    "HDRS_all26_sensitivity_52_results": true,
+    "HDRS_subset_matches_active_paired_significant_targets": true,
+    "heatmap_figure_PNG_PDF_SVG_exist": true
+  },
+  "summary": [
+    {
+      "analysis": "baseline TRD1 vs nTRD",
+      "arm": "TRD1",
+      "family": "26 MwC targets",
+      "tested": 26,
+      "nominal_p_lt_0p05": 8,
+      "fdr_q_lt_0p05": 0,
+      "method": "HC3 OLS; age + sex"
+    },
+    {
+      "analysis": "paired pre-post",
+      "arm": "iTBS",
+      "family": "26 MwC targets",
+      "tested": 26,
+      "nominal_p_lt_0p05": 0,
+      "fdr_q_lt_0p05": 0,
+      "method": "paired t; post minus pre"
+    },
+    {
+      "analysis": "paired pre-post",
+      "arm": "rTMS",
+      "family": "26 MwC targets",
+      "tested": 26,
+      "nominal_p_lt_0p05": 0,
+      "fdr_q_lt_0p05": 0,
+      "method": "paired t; post minus pre"
+    },
+    {
+      "analysis": "paired pre-post",
+      "arm": "sham",
+      "family": "26 MwC targets",
+      "tested": 26,
+      "nominal_p_lt_0p05": 10,
+      "fdr_q_lt_0p05": 3,
+      "method": "paired t; post minus pre"
+    },
+    {
+      "analysis": "group-by-time versus sham",
+      "arm": "iTBS",
+      "family": "26 MwC targets",
+      "tested": 26,
+      "nominal_p_lt_0p05": 7,
+      "fdr_q_lt_0p05": 3,
+      "method": "HC3 change-score OLS; age + sex"
+    },
+    {
+      "analysis": "MwC change vs HDRS improvement",
+      "arm": "iTBS",
+      "family": "targets passing paired P<.05",
+      "tested": 0,
+      "nominal_p_lt_0p05": 0,
+      "fdr_q_lt_0p05": 0,
+      "method": "two-stage screen: partial Spearman controlling age + sex; BH within paired-significant targets"
+    },
+    {
+      "analysis": "group-by-time versus sham",
+      "arm": "rTMS",
+      "family": "26 MwC targets",
+      "tested": 26,
+      "nominal_p_lt_0p05": 6,
+      "fdr_q_lt_0p05": 2,
+      "method": "HC3 change-score OLS; age + sex"
+    },
+    {
+      "analysis": "MwC change vs HDRS improvement",
+      "arm": "rTMS",
+      "family": "targets passing paired P<.05",
+      "tested": 0,
+      "nominal_p_lt_0p05": 0,
+      "fdr_q_lt_0p05": 0,
+      "method": "two-stage screen: partial Spearman controlling age + sex; BH within paired-significant targets"
+    }
+  ],
+  "inputs": {
+    "subject_table": "inputs/mwc/normative_sc/age_sex_adjusted/subject_level_corticolimbic26_age_sex_adjusted_normativeSC10_MwC_wide.csv",
+    "subject_table_sha256": "2a1f54d0106636610775b48001bb60037173a744d7d854500d2101e563edb40b",
+    "baseline_table": "inputs/mwc/normative_sc/age_sex_adjusted/baseline_nTRD_vs_TRD1_age_sex_adjusted_MwC_HC3_all26.csv",
+    "baseline_table_sha256": "5b9ca846712a1e32ff34c8a0a465e0041c60b5100f02d6d256725f39e02d1d8e",
+    "upstream_validation": "inputs/mwc/normative_sc/validation_report.json",
+    "upstream_validation_sha256": "d3e9ad62b90f21fe61d0bb262e0b18ae22544b46e3620b2d9a82dd92da0df495"
+  }
+}

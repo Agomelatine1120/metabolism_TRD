@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "checks": {
+    "retained_nodes_144": true,
+    "fixed_structural_edges_1030": true,
+    "corrected_BOLD_without_individual_GM_mask": true,
+    "sessions_291": true
+  }
+}

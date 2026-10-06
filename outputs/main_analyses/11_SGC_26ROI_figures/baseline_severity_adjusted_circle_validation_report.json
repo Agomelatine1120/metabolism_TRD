@@ -1,0 +1,47 @@
+{
+  "status": "PASS",
+  "scope": "TRD1 versus nTRD 26-ROI SGC circle adjusted for baseline severity",
+  "model": "deviation ~ group_TRD1 + age + sex + baseline HDRS-17",
+  "effect_displayed": "OLS group coefficient: adjusted TRD1 minus nTRD",
+  "regional_nodes": 26,
+  "cortical_limbic_edges": 168,
+  "n_TRD1": 35,
+  "n_nTRD": 25,
+  "baseline_HDRS17_by_group": {
+    "TRD1": {
+      "count": 35,
+      "mean": 15.885714285714286,
+      "std": 7.383492831076267,
+      "min": 0,
+      "max": 35
+    },
+    "nTRD": {
+      "count": 25,
+      "mean": 3.72,
+      "std": 3.2212833881337835,
+      "min": 0,
+      "max": 13
+    }
+  },
+  "same_renderer_as_original": true,
+  "same_node_scale_as_original_four_panels": 1.657658757070224,
+  "same_edge_scale_as_original_four_panels": 1.832299390744288,
+  "checks": {
+    "all_adjusted_node_values_finite": true,
+    "all_adjusted_edge_values_finite": true,
+    "individual_png_exists": true,
+    "five_panel_png_exists": true,
+    "node_table_rows_26": true,
+    "edge_table_rows_168": true
+  },
+  "outputs": {
+    "individual_PNG": "./outputs/main_analyses/11_SGC_26ROI_figures/figures/corticolimbic_circular_26ROI_bilateral_SGC_TRD_vs_nonTRD_baseline_severity_adjusted.png",
+    "individual_PDF": "./outputs/main_analyses/11_SGC_26ROI_figures/figures/corticolimbic_circular_26ROI_bilateral_SGC_TRD_vs_nonTRD_baseline_severity_adjusted.pdf",
+    "individual_SVG": "./outputs/main_analyses/11_SGC_26ROI_figures/figures/corticolimbic_circular_26ROI_bilateral_SGC_TRD_vs_nonTRD_baseline_severity_adjusted.svg",
+    "five_panel_PNG": "./outputs/main_analyses/11_SGC_26ROI_figures/figures/corticolimbic_circular_26ROI_bilateral_SGC_cross_sectional_with_baseline_severity_adjusted.png",
+    "five_panel_PDF": "./outputs/main_analyses/11_SGC_26ROI_figures/figures/corticolimbic_circular_26ROI_bilateral_SGC_cross_sectional_with_baseline_severity_adjusted.pdf",
+    "five_panel_SVG": "./outputs/main_analyses/11_SGC_26ROI_figures/figures/corticolimbic_circular_26ROI_bilateral_SGC_cross_sectional_with_baseline_severity_adjusted.svg",
+    "regional_model_table": "./outputs/main_analyses/11_SGC_26ROI_figures/tables/baseline_severity_adjusted_TRD1_vs_nTRD_regional26_SGC.csv",
+    "connectivity_model_table": "./outputs/main_analyses/11_SGC_26ROI_figures/tables/baseline_severity_adjusted_TRD1_vs_nTRD_connectivity168_SGC.csv"
+  }
+}
