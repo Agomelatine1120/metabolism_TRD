@@ -18,11 +18,11 @@
     "higher_putamen_pallidum": "#D2A1B1"
   },
   "source_result_file": "./outputs/main_analyses/01_TRD1_discovery_agesex/regional_uncorrected_p_lt_0p01.xlsx",
-  "source_result_sha256": "e267e642d074c2edf1fd0d4fd3b79b1bf9753f4d1abea4c00858bdbcc902820c",
+  "source_result_sha256": "f6afd78b08605d2dbaffcc529a319218ca199ff4b0d16e4f049670752002418d",
   "atlas": "./inputs/core/AAL3_144_space-PET_res-2_dseg.nii.gz",
   "atlas_sha256": "6446a71e6d4ee2d7ee85a58d35039762ba10c0bf605b7ceca020ee36bac0f525",
   "SGC_audit_source": "./outputs/main_analyses/01_TRD1_discovery_agesex/regional_all.xlsx",
-  "SGC_audit_source_sha256": "f74c12ec94892932554c12877d4713cd45e3ceeba0dc56bdd6d3fa13de42850e",
+  "SGC_audit_source_sha256": "b08114c2b308eb2cd805f0da1f8c350bc854bb3a94a146da9823000746244efb",
   "palette_source": "./outputs/main_analyses/13_sensitivity_mPFC_striatopallidal_glass_brain/tables/sampled_blue_pink_colormap_anchors.csv",
   "palette_source_sha256": "fae5adce82306d34203a763c915ab8eb7f4b1d17e5259468404c35fbf581ab33",
   "checks": {

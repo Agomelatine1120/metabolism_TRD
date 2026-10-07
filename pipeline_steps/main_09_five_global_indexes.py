@@ -24,7 +24,7 @@ CLINICAL = CLINICAL_FILE
 PET_FILE = INPUT_ROOT / 'core' / 'AAL3_PET_wbSUVR_Table.xlsx'
 ROI_FILE = INPUT_ROOT / 'core' / 'corticolimbic_12x14_ROI_definition.csv'
 MWC_FILE = MWC_INPUT_FILE
-EXPECTED={'HC':23,'nTRD':25,'TRD1':35,'TRD2':104}
+EXPECTED={'HC':23,'nTRD':25,'TRD1':35,'TRD2':86}
 
 
 def norm_key(value):

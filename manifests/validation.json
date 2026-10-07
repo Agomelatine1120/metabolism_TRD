@@ -4,11 +4,11 @@
     "HC": 23,
     "nTRD": 25,
     "TRD1": 35,
-    "rTMS": 34,
-    "iTBS": 37,
-    "sham": 33
+    "rTMS": 28,
+    "iTBS": 31,
+    "sham": 27
   },
-  "sessions": 291,
+  "sessions": 255,
   "models": {
     "HC_reference": "age + sex",
     "group": "age + sex",
@@ -19,18 +19,18 @@
   },
   "results": {
     "primary_p_lt_0p01": {
-      "regional_SUVR": 7,
-      "metabolic_connectivity": 22,
-      "MwC": 2
+      "regional_SUVR": 8,
+      "metabolic_connectivity": 19,
+      "MwC": 3
     },
     "sensitivity_p_lt_0p05": {
-      "regional_SUVR": 5,
-      "metabolic_connectivity": 17,
+      "regional_SUVR": 4,
+      "metabolic_connectivity": 18,
       "MwC": 2
     },
     "active_paired_p_lt_0p01_edges": {
-      "iTBS": 3,
-      "rTMS": 3
+      "iTBS": 2,
+      "rTMS": 6
     }
   },
   "checks": {
@@ -165,7 +165,7 @@
       "notebook": "notebooks/09_main_09_five_global_indexes.ipynb",
       "code_cells": 17,
       "executed_code_cells": 17,
-      "stored_outputs": 45,
+      "stored_outputs": 44,
       "errors": 0,
       "results_preview_last": true
     },

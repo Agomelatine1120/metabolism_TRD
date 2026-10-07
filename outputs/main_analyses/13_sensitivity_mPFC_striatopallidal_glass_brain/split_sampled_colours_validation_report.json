@@ -16,7 +16,7 @@
   "atlas": "./inputs/core/AAL3_144_space-PET_res-2_dseg.nii.gz",
   "atlas_sha256": "6446a71e6d4ee2d7ee85a58d35039762ba10c0bf605b7ceca020ee36bac0f525",
   "result_table": "./outputs/main_analyses/11_SGC_26ROI_figures/tables/baseline_severity_adjusted_TRD1_vs_nTRD_regional26_SGC.csv",
-  "result_table_sha256": "b5c79d72e51271102ce9b7b0913b7658f4df2571026fe2513037a7e8be3f5077",
+  "result_table_sha256": "083acb0d618610bef6d112b2497b697c7fba338d846bab021bbe0dfab1c14ed7",
   "palette_source": "fixed hex anchors sampled from the approved figure reference",
   "checks": {
     "all_colour_anchors_exact_pixel_matches": true,

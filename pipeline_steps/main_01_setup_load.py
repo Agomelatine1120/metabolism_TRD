@@ -98,9 +98,9 @@ PREPOST_P_THRESHOLD = 0.05
 LONGITUDINAL_FIGURE_P_THRESHOLD = 0.01
 CLINICAL_P_THRESHOLD = 0.05
 FDR_THRESHOLD = 0.05
-EXPECTED_COUNTS = {"HC": 23, "nTRD": 25, "TRD1": 35, "TRD2": 104}
-EXPECTED_ARMS = {"iTBS": 37, "rTMS": 34, "sham": 33}
-EXPECTED_PAIRED_ARMS = {"iTBS": 37, "rTMS": 34, "sham": 33}
+EXPECTED_COUNTS = {"HC": 23, "nTRD": 25, "TRD1": 35, "TRD2": 86}
+EXPECTED_ARMS = {"iTBS": 31, "rTMS": 28, "sham": 27}
+EXPECTED_PAIRED_ARMS = {"iTBS": 31, "rTMS": 28, "sham": 27}
 
 roi_definition = pd.read_csv(ROI_FILE)
 CORTICAL_IDS = roi_definition.loc[roi_definition["network"] == "cortical", "AAL3_ID"].astype(int).tolist()
@@ -284,7 +284,7 @@ mwc_roi_names = [str(roi).split("_", 2)[2] for roi in ROI_COLUMNS]
 mwc_feature_columns = [f"MwC_{roi}" for roi in mwc_roi_names]
 assert len(mwc_feature_columns) == 26
 assert all(column in mwc_adjusted for column in mwc_feature_columns)
-assert len(mwc_adjusted) == 291
+assert len(mwc_adjusted) == 255
 assert not mwc_adjusted.duplicated(["subject_key", "session"]).any()
 assert int((mwc_adjusted.analysis_cohort.eq("HC") & mwc_adjusted.session.eq("ses-01")).sum()) == 23
 
@@ -306,7 +306,7 @@ mwc_group_values = {
     "TRD2": mwc_baseline_matrix("TRD2"),
 }
 assert {key: len(value) for key, value in mwc_group_values.items()} == {
-    "nTRD": 25, "TRD1": 35, "TRD2": 104,
+    "nTRD": 25, "TRD1": 35, "TRD2": 86,
 }
 display(pd.DataFrame({
     "cohort": list(mwc_group_values),

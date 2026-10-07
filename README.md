@@ -26,20 +26,20 @@ only to calculate MwC.
 
 ## Analysis samples
 
-The dataset contains 187 analyzed participants:
+The dataset contains 169 analyzed participants:
 
 | Cohort | Analysis role | n |
 |---|---|---:|
 | Healthy controls | Healthy reference | 23 |
 | non-TRD | Clinical comparison group | 25 |
 | TRD1 | Primary TRD group analysis | 35 |
-| TRD2 | Independent spatial comparison and stimulation cohort | 104 |
+| TRD2 | Independent spatial comparison and stimulation cohort | 86 |
 
 Baseline non-TRD-versus-TRD1 models adjust for age and sex. TRD1
 and TRD2 deviation profiles are compared using spatial Pearson correlation,
 directional agreement, and a magnitude-weighted signed Dice coefficient.
 
-The longitudinal dataset contains **34 rTMS, 37 iTBS, and 33 sham** paired
+The longitudinal dataset contains **28 rTMS, 31 iTBS, and 27 sham** paired
 participants. Within-arm changes are assessed with paired-sample t-tests. The
 longitudinal plotting step programmatically displays all, and only, active-arm
 metabolic-connectivity edges meeting **paired `p < .01`**. Active-versus-sham
@@ -94,16 +94,17 @@ unused participants downstream.
 
 - `inputs/core/analysis_population_roster.csv` defines every permitted public
   participant/session record.
-- `inputs/core/clinical_data.xlsx` contains exactly 187 analyzed participants.
-- `inputs/core/AAL3_PET_wbSUVR_Table.xlsx` contains 291 permitted PET sessions
-  across 144 retained AAL3 regions: 187 baseline and 104 post-treatment.
+- `inputs/core/clinical_data.xlsx` contains exactly 169 analyzed participants.
+- `inputs/core/AAL3_PET_wbSUVR_Table.xlsx` contains 255 permitted PET sessions
+  across 144 retained AAL3 regions: 169 baseline and 86 post-treatment. PET
+  values use the individual grey-matter threshold **GM > 0.3**.
 - `inputs/mwc/normative_sc/session_gcmi_pet_AAL3_144.npz` contains the same
-  291 permitted PET/GCMI sessions. GCMI matrices were derived from corrected
+  255 permitted PET/GCMI sessions. GCMI matrices were derived from corrected
   BOLD signals without individual grey-matter masking.
-- Longitudinal inputs contain 34 rTMS, 37 iTBS, and 33 sham participants with
+- Longitudinal inputs contain 28 rTMS, 31 iTBS, and 27 sham participants with
   paired PET and fMRI data.
 
-All cross-file identifiers use public keys (`P001`–`P187`). Direct identifiers,
+All cross-file identifiers use public keys (`P001`–`P169`). Direct identifiers,
 unused participants, and unneeded clinical variables are not included. These
 data are pseudonymized, not anonymous, and the repository should remain private
 unless sharing has been separately authorized.

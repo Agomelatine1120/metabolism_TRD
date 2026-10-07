@@ -1,2 +1,2 @@
 n_ROIs,cortical_ROIs,limbic_ROIs,TRD1_n,TRD2_n,pearson_r,pearson_p_two_sided,same_direction_agreement,DSC_weighted,MwC_input
-26,12,14,35,104,0.9707510079524834,2.2289464951741016e-16,0.9230769230769231,0.8199140490912592,HC-only age/sex residual z scores; 26 ROIs extracted after all-144 computation
+26,12,14,35,86,0.956093335161922,2.705796979180945e-14,0.8846153846153846,0.8223587076901034,HC-only age/sex residual z scores; 26 ROIs extracted after all-144 computation

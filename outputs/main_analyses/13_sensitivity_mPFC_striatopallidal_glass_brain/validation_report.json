@@ -43,7 +43,7 @@
     ]
   ],
   "result_table": "./outputs/main_analyses/11_SGC_26ROI_figures/tables/baseline_severity_adjusted_TRD1_vs_nTRD_regional26_SGC.csv",
-  "result_table_sha256": "b5c79d72e51271102ce9b7b0913b7658f4df2571026fe2513037a7e8be3f5077",
+  "result_table_sha256": "083acb0d618610bef6d112b2497b697c7fba338d846bab021bbe0dfab1c14ed7",
   "nilearn_version": "0.12.1",
   "rendering": {
     "function": "nilearn.plotting.plot_glass_brain",
@@ -62,57 +62,57 @@
     "21": {
       "ROI": "AAL3_021_Frontal_Med_Orb_L",
       "display_label": "Lt. vmPFC",
-      "adjusted_beta": -1.120607035160371,
-      "p_uncorrected": 0.0965510469038479,
+      "adjusted_beta": -0.8191740602747595,
+      "p_uncorrected": 0.1660771492584847,
       "voxel_count": 719
     },
     "22": {
       "ROI": "AAL3_022_Frontal_Med_Orb_R",
       "display_label": "Rt. vmPFC",
-      "adjusted_beta": -0.6444143975187147,
-      "p_uncorrected": 0.1789164405796003,
+      "adjusted_beta": -0.8427908619604928,
+      "p_uncorrected": 0.0939295925774484,
       "voxel_count": 856
     },
     "19": {
       "ROI": "AAL3_019_Frontal_Sup_Medial_L",
       "display_label": "Lt. dmPFC",
-      "adjusted_beta": -1.1453133097392671,
-      "p_uncorrected": 0.0313611314987883,
+      "adjusted_beta": -0.946591220368057,
+      "p_uncorrected": 0.0586468791224615,
       "voxel_count": 2992
     },
     "20": {
       "ROI": "AAL3_020_Frontal_Sup_Medial_R",
       "display_label": "Rt. dmPFC",
-      "adjusted_beta": -0.8810810865431887,
-      "p_uncorrected": 0.1217280448164081,
+      "adjusted_beta": -0.9854097699934916,
+      "p_uncorrected": 0.090304318339136,
       "voxel_count": 2134
     },
     "77": {
       "ROI": "AAL3_077_Putamen_L",
       "display_label": "Lt. putamen",
-      "adjusted_beta": 1.4556601957768924,
-      "p_uncorrected": 0.0301672406218684,
+      "adjusted_beta": 1.4062218063816632,
+      "p_uncorrected": 0.0353811669000666,
       "voxel_count": 293
     },
     "78": {
       "ROI": "AAL3_078_Putamen_R",
       "display_label": "Rt. putamen",
-      "adjusted_beta": 2.365288031128975,
-      "p_uncorrected": 0.0017686081083407,
+      "adjusted_beta": 2.2449642173475497,
+      "p_uncorrected": 0.0027873273773586,
       "voxel_count": 280
     },
     "79": {
       "ROI": "AAL3_079_Pallidum_L",
       "display_label": "Lt. pallidum",
-      "adjusted_beta": 1.2338744623214062,
-      "p_uncorrected": 0.0154103389880727,
+      "adjusted_beta": 1.2200411474399706,
+      "p_uncorrected": 0.0076480435106904,
       "voxel_count": 225
     },
     "80": {
       "ROI": "AAL3_080_Pallidum_R",
       "display_label": "Rt. pallidum",
-      "adjusted_beta": 1.71763538369992,
-      "p_uncorrected": 0.00571379398164,
+      "adjusted_beta": 1.6664081394961698,
+      "p_uncorrected": 0.0010046214394978,
       "voxel_count": 249
     }
   },

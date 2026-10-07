@@ -4,13 +4,15 @@
     "HC": 23,
     "nTRD": 25,
     "TRD1": 35,
-    "rTMS": 34,
-    "iTBS": 37,
-    "sham": 33
+    "rTMS": 28,
+    "iTBS": 31,
+    "sham": 27
   },
-  "sessions": 291,
+  "sessions": 255,
   "input_policy": "Only final analysed participants and sessions are included",
+  "PET": "GM > 0.3 individual-grey-matter-threshold wbSUVR; 144 retained AAL3 ROIs",
   "BOLD": "AAL3 spatial-mean time series without individual GM masking, represented by session-level GCMI matrices",
+  "PET_and_fMRI_required_for_TRD2": true,
   "models": {
     "HC_reference": "age + sex",
     "group": "age + sex",

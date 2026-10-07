@@ -650,7 +650,7 @@ for index, (ax, specification) in enumerate(zip(axes, SELECTED_LONGITUDINAL_EDGE
                     "subject_key": subject_key,
                     "session": timepoint.lower(),
                     "deviation": float(value),
-                    "TRD2_definition": "formal_TRD2_n104_iTBS37_rTMS34_sham33",
+                    "TRD2_definition": "joint_PET_fMRI_TRD2_n86_iTBS31_rTMS28_sham27",
                 })
 
 legend_handles = [

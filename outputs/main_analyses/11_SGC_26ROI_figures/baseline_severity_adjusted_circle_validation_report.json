@@ -24,8 +24,8 @@
     }
   },
   "same_renderer_as_original": true,
-  "same_node_scale_as_original_four_panels": 1.657658757070224,
-  "same_edge_scale_as_original_four_panels": 1.832299390744288,
+  "same_node_scale_as_original_four_panels": 1.581855005654741,
+  "same_edge_scale_as_original_four_panels": 1.716135524098861,
   "checks": {
     "all_adjusted_node_values_finite": true,
     "all_adjusted_edge_values_finite": true,

@@ -13,24 +13,24 @@
   "TRD1_n": 35,
   "nonTRD_n": 25,
   "active_n_available_by_metric": {
-    "D_MwC": 66,
-    "D_metabolic_signature": 66,
-    "MBI_z": 71,
-    "D_SUVR": 71,
-    "D_MC": 71
+    "D_MwC": 56,
+    "MBI_z": 59,
+    "D_metabolic_signature": 56,
+    "D_SUVR": 59,
+    "D_MC": 59
   },
   "TRD1_vs_nonTRD_p_lt_0p01": [
     "D_SUVR",
     "D_metabolic_signature",
-    "D_MwC",
     "MBI_z",
+    "D_MwC",
     "D_MC"
   ],
   "TRD1_vs_nonTRD_BH_FDR_q_lt_0p05": [
     "D_SUVR",
     "D_metabolic_signature",
-    "D_MwC",
     "MBI_z",
+    "D_MwC",
     "D_MC"
   ],
   "active_postpre_p_lt_0p05": [],

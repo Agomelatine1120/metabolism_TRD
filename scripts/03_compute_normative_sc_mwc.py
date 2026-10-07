@@ -23,7 +23,7 @@ import pandas as pd
 
 
 N_NODES = 144
-N_SESSIONS = 291
+N_SESSIONS = 255
 MI_FLOOR_BITS = 0.01
 PET_SCALE = 100.0
 EXPECTED_SC_EDGES = 1_030
@@ -207,7 +207,7 @@ def recompute(base: Path) -> dict[str, Path]:
     recomputed_26.to_csv(selected_output, index=False, float_format="%.12g")
 
     checks = {
-        "sessions_291": len(recomputed_full) == N_SESSIONS,
+        "sessions_255": len(recomputed_full) == N_SESSIONS,
         "retained_AAL3_nodes_144": len(full_columns) == N_NODES,
         "possible_undirected_edges_10296": EXPECTED_POSSIBLE_EDGES == 10_296,
         "fixed_dTOR_normative_SC_edges_1030": retained_sc_edges == EXPECTED_SC_EDGES,

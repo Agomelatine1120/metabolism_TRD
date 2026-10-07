@@ -39,7 +39,11 @@ def sha256(path: Path) -> str:
 
 def write_inventory(path: Path, files: list[Path]) -> None:
     with path.open("w", newline="", encoding="utf-8") as stream:
-        writer = csv.DictWriter(stream, fieldnames=["repository_path", "bytes", "sha256"])
+        writer = csv.DictWriter(
+            stream,
+            fieldnames=["repository_path", "bytes", "sha256"],
+            lineterminator="\n",
+        )
         writer.writeheader()
         for item in files:
             writer.writerow(
@@ -63,27 +67,27 @@ def main() -> int:
     contract = json.loads((ROOT / "inputs/core/analysis_contract.json").read_text())
     gcmi = np.load(ROOT / "inputs/mwc/normative_sc/session_gcmi_pet_AAL3_144.npz", allow_pickle=True)
 
-    expected_keys = [f"P{index:03d}" for index in range(1, 188)]
+    expected_keys = [f"P{index:03d}" for index in range(1, 170)]
     checks["clinical_population"] = (
-        len(clinical) == 187
+        len(clinical) == 169
         and clinical.subject_key.astype(str).tolist() == expected_keys
         and clinical.analysis_cohort.value_counts().to_dict()
-        == {"TRD2": 104, "TRD1": 35, "nTRD": 25, "HC": 23}
+        == {"TRD2": 86, "TRD1": 35, "nTRD": 25, "HC": 23}
         and clinical.loc[clinical.analysis_cohort.eq("TRD2"), "analysis_arm"].value_counts().to_dict()
-        == {"iTBS": 37, "rTMS": 34, "sham": 33}
+        == {"iTBS": 31, "rTMS": 28, "sham": 27}
     )
     checks["roster_population"] = (
         roster.subject_key.astype(str).tolist() == expected_keys
         and roster[["pet_ses_01", "pet_ses_02", "mwc_ses_01", "mwc_ses_02"]].sum().to_dict()
-        == {"pet_ses_01": 187, "pet_ses_02": 104, "mwc_ses_01": 187, "mwc_ses_02": 104}
+        == {"pet_ses_01": 169, "pet_ses_02": 86, "mwc_ses_01": 169, "mwc_ses_02": 86}
     )
     pet_columns = pet.columns[1:].astype(str)
     pet_keys = pet_columns.str.extract(r"(P\d{3})", expand=False)
-    checks["pet_input"] = pet.shape == (144, 292) and pet_keys.notna().all() and set(pet_keys) == set(expected_keys)
+    checks["pet_input"] = pet.shape == (144, 256) and pet_keys.notna().all() and set(pet_keys) == set(expected_keys)
     gcmi_keys = np.asarray(gcmi["subject_key"]).astype(str)
     checks["gcmi_input"] = (
-        np.asarray(gcmi["gcmi_raw"]).shape == (291, 144, 144)
-        and np.asarray(gcmi["pet_wbSUVR"]).shape == (291, 144)
+        np.asarray(gcmi["gcmi_raw"]).shape == (255, 144, 144)
+        and np.asarray(gcmi["pet_wbSUVR"]).shape == (255, 144)
         and set(gcmi_keys) == set(expected_keys)
         and all(re.fullmatch(r"P\d{3}", key) for key in gcmi_keys)
     )
@@ -95,10 +99,12 @@ def main() -> int:
     )
     checks["analysis_contract"] = contract == {
         "status": "PASS",
-        "participants": {"HC": 23, "nTRD": 25, "TRD1": 35, "rTMS": 34, "iTBS": 37, "sham": 33},
-        "sessions": 291,
+        "participants": {"HC": 23, "nTRD": 25, "TRD1": 35, "rTMS": 28, "iTBS": 31, "sham": 27},
+        "sessions": 255,
         "input_policy": "Only final analysed participants and sessions are included",
+        "PET": "GM > 0.3 individual-grey-matter-threshold wbSUVR; 144 retained AAL3 ROIs",
         "BOLD": "AAL3 spatial-mean time series without individual GM masking, represented by session-level GCMI matrices",
+        "PET_and_fMRI_required_for_TRD2": True,
         "models": {
             "HC_reference": "age + sex",
             "group": "age + sex",
@@ -113,20 +119,20 @@ def main() -> int:
     regional = pd.read_excel(main_output / "01_TRD1_discovery_agesex/regional_uncorrected_p_lt_0p01.xlsx")
     edges = pd.read_excel(main_output / "01_TRD1_discovery_agesex/edge_uncorrected_p_lt_0p01.xlsx")
     mwc = pd.read_csv(main_output / "07_age_sex_adjusted_MwC/tables/baseline_nTRD_vs_TRD1_adjusted_all_26.csv")
-    checks["primary_significance_counts"] = (len(regional), len(edges), int((mwc.hc3_p_uncorrected < .01).sum())) == (7, 22, 2)
+    checks["primary_significance_counts"] = (len(regional), len(edges), int((mwc.hc3_p_uncorrected < .01).sum())) == (8, 19, 3)
 
     sensitivity_file = main_output / "08_TRD1_vs_nTRD_HDRS_sensitivity/TRD1_vs_nTRD_baseline_HDRS_sensitivity.xlsx"
     sensitivity_counts = tuple(
         int((pd.read_excel(sensitivity_file, sheet_name=sheet).HDRS_adjusted_p_uncorrected < .05).sum())
         for sheet in ("regional_all", "edge_all", "MwC_all")
     )
-    checks["sensitivity_significance_counts"] = sensitivity_counts == (5, 17, 2)
+    checks["sensitivity_significance_counts"] = sensitivity_counts == (4, 18, 2)
 
     paired_counts = {}
     for arm, folder in (("iTBS", "03_iTBS_prepost"), ("rTMS", "04_rTMS_prepost")):
         table = pd.read_excel(main_output / f"02_TRD2_deviation_prepost_agesex/{folder}/edge_pairttest_all.xlsx")
         paired_counts[arm] = int((table.paired_p_uncorrected < .01).sum())
-    checks["dynamic_longitudinal_selection"] = paired_counts == {"iTBS": 3, "rTMS": 3}
+    checks["dynamic_longitudinal_selection"] = paired_counts == {"iTBS": 2, "rTMS": 6}
 
     required_figures = [
         "04_figures/nTRD_TRD1_TRD2_regional26_strip_heatmap.png",
@@ -193,12 +199,12 @@ def main() -> int:
 
     report = {
         "status": "PASS" if all(checks.values()) else "FAIL",
-        "population": {"HC": 23, "nTRD": 25, "TRD1": 35, "rTMS": 34, "iTBS": 37, "sham": 33},
-        "sessions": 291,
+        "population": {"HC": 23, "nTRD": 25, "TRD1": 35, "rTMS": 28, "iTBS": 31, "sham": 27},
+        "sessions": 255,
         "models": contract["models"],
         "results": {
-            "primary_p_lt_0p01": {"regional_SUVR": 7, "metabolic_connectivity": 22, "MwC": 2},
-            "sensitivity_p_lt_0p05": {"regional_SUVR": 5, "metabolic_connectivity": 17, "MwC": 2},
+            "primary_p_lt_0p01": {"regional_SUVR": 8, "metabolic_connectivity": 19, "MwC": 3},
+            "sensitivity_p_lt_0p05": {"regional_SUVR": 4, "metabolic_connectivity": 18, "MwC": 2},
             "active_paired_p_lt_0p01_edges": paired_counts,
         },
         "checks": checks,

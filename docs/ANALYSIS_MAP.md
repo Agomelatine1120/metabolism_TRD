@@ -8,7 +8,7 @@ connectivity edges.
 
 | Step | Inputs | Outputs |
 |---:|---|---|
-| 1 | 291-session 144-node GCMI/PET bundle; 1,030-edge normative-SC mask | Recomputed 144-node and extracted 26-ROI MwC tables; calculation validation |
+| 1 | 255-session 144-node GCMI/PET bundle; 1,030-edge normative-SC mask | Recomputed 144-node and extracted 26-ROI MwC tables; calculation validation |
 | 2 | MwC 01; clinical roster | Subject-level 26-ROI wide/long tables and HC-referenced deviations |
 | 3 | MwC 02 | 26-ROI deviation heatmap, group vectors, spatial-replication statistics and figure |
 | 4 | MwC 02–03; age, sex; treatment/session data | Baseline and longitudinal MwC statistical tables |

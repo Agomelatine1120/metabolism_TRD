@@ -19,7 +19,7 @@ assert mwc_calculation_validation["checks"]["all_144_nodes_computed_before_26_ex
 
 mwc_source = pd.read_csv(MWC_WIDE_FILE)
 full_source = pd.read_csv(MWC_FULL_FILE)
-assert len(mwc_source) == len(full_source) == 291
+assert len(mwc_source) == len(full_source) == 255
 key_columns = ["subject_key", "session"]
 assert mwc_source[key_columns].equals(full_source[key_columns])
 
@@ -55,7 +55,7 @@ clinical_all_mwc['education'] = pd.to_numeric(clinical_all_mwc['education_years'
 clinical_all_mwc['hdrs_pre'] = pd.to_numeric(clinical_all_mwc['hdrs17_pre'], errors='coerce')
 clinical_all_mwc['hdrs_post'] = pd.to_numeric(clinical_all_mwc['hdrs17_post'], errors='coerce')
 clinical_lookup = clinical_all_mwc.set_index('subject_key')
-expected_clinical_counts = {"HC": 23, "nTRD": 25, "TRD1": 35, "TRD2": 104}
+expected_clinical_counts = {"HC": 23, "nTRD": 25, "TRD1": 35, "TRD2": 86}
 assert clinical_all_mwc["analysis_cohort"].value_counts().to_dict() == expected_clinical_counts
 
 mwc_source = mwc_source.copy()
@@ -141,6 +141,6 @@ display(pd.DataFrame({
         "upstream paired sessions", "clinical sessions", "ROIs per session",
         "long-table rows", "all-144 to 26 extraction maximum absolute error",
     ],
-    "value": [291, len(mwc_wide), N_ROIS, len(mwc_long), all144_extraction_error],
+    "value": [255, len(mwc_wide), N_ROIS, len(mwc_long), all144_extraction_error],
 }))
 display(roi[["node_index", "network", "AAL3_ID", "ROI"]])
