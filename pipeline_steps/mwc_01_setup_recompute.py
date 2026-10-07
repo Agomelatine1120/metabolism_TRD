@@ -84,7 +84,7 @@ with MWC_CALCULATION_VALIDATION_FILE.open(encoding="utf-8") as stream:
     mwc_calculation_validation = json.load(stream)
 assert mwc_calculation_validation["status"] == "PASS"
 required_calculation_checks = [
-    "sessions_255",
+    "sessions_253",
     "retained_AAL3_nodes_144",
     "fixed_dTOR_normative_SC_edges_1030",
     "gcmi_floor_bits_0p01",

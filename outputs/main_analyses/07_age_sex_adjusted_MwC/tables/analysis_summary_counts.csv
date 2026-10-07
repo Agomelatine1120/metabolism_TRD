@@ -2,8 +2,8 @@ analysis,arm,family,tested,nominal_p_lt_0p05,fdr_q_lt_0p05,method
 baseline TRD1 vs nTRD,TRD1,26 MwC targets,26,8,0,HC3 OLS; age + sex
 paired pre-post,iTBS,26 MwC targets,26,1,0,paired t; post minus pre
 paired pre-post,rTMS,26 MwC targets,26,2,0,paired t; post minus pre
-paired pre-post,sham,26 MwC targets,26,4,0,paired t; post minus pre
-group-by-time versus sham,iTBS,26 MwC targets,26,6,0,HC3 change-score OLS; age + sex
+paired pre-post,sham,26 MwC targets,26,2,0,paired t; post minus pre
+group-by-time versus sham,iTBS,26 MwC targets,26,3,0,HC3 change-score OLS; age + sex
 MwC change vs HDRS improvement,iTBS,targets passing paired P<.05,1,0,0,two-stage screen: partial Spearman controlling age + sex; BH within paired-significant targets
-group-by-time versus sham,rTMS,26 MwC targets,26,5,0,HC3 change-score OLS; age + sex
+group-by-time versus sham,rTMS,26 MwC targets,26,3,0,HC3 change-score OLS; age + sex
 MwC change vs HDRS improvement,rTMS,targets passing paired P<.05,2,1,0,two-stage screen: partial Spearman controlling age + sex; BH within paired-significant targets

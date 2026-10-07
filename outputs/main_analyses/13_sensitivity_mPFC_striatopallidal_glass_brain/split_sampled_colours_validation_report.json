@@ -13,9 +13,9 @@
   },
   "display_p_threshold_applied": false,
   "display_mode": "lyrz (four views)",
-  "atlas": "./inputs/core/AAL3_144_space-PET_res-2_dseg.nii.gz",
+  "atlas": "/Users/freddylee/Desktop/Coding_repository/Python_analysis/metabolism_TRD_release_refresh_20261007/inputs/core/AAL3_144_space-PET_res-2_dseg.nii.gz",
   "atlas_sha256": "6446a71e6d4ee2d7ee85a58d35039762ba10c0bf605b7ceca020ee36bac0f525",
-  "result_table": "./outputs/main_analyses/11_SGC_26ROI_figures/tables/baseline_severity_adjusted_TRD1_vs_nTRD_regional26_SGC.csv",
+  "result_table": "/Users/freddylee/Desktop/Coding_repository/Python_analysis/metabolism_TRD_release_refresh_20261007/outputs/main_analyses/11_SGC_26ROI_figures/tables/baseline_severity_adjusted_TRD1_vs_nTRD_regional26_SGC.csv",
   "result_table_sha256": "083acb0d618610bef6d112b2497b697c7fba338d846bab021bbe0dfab1c14ed7",
   "palette_source": "fixed hex anchors sampled from the approved figure reference",
   "checks": {
@@ -30,14 +30,14 @@
     "NIfTI_maps_and_masks_exist": true
   },
   "outputs": {
-    "prefrontal_PNG": "./outputs/main_analyses/13_sensitivity_mPFC_striatopallidal_glass_brain/figures/Figure_sensitivity_adjusted_bilateral_vmPFC_dmPFC_medialOFC_sampled_blue_nilearn_glass_brain.png",
-    "prefrontal_PDF": "./outputs/main_analyses/13_sensitivity_mPFC_striatopallidal_glass_brain/figures/Figure_sensitivity_adjusted_bilateral_vmPFC_dmPFC_medialOFC_sampled_blue_nilearn_glass_brain.pdf",
-    "prefrontal_SVG": "./outputs/main_analyses/13_sensitivity_mPFC_striatopallidal_glass_brain/figures/Figure_sensitivity_adjusted_bilateral_vmPFC_dmPFC_medialOFC_sampled_blue_nilearn_glass_brain.svg",
-    "subcortical_PNG": "./outputs/main_analyses/13_sensitivity_mPFC_striatopallidal_glass_brain/figures/Figure_sensitivity_adjusted_bilateral_caudate_putamen_pallidum_sampled_pink_nilearn_glass_brain.png",
-    "subcortical_PDF": "./outputs/main_analyses/13_sensitivity_mPFC_striatopallidal_glass_brain/figures/Figure_sensitivity_adjusted_bilateral_caudate_putamen_pallidum_sampled_pink_nilearn_glass_brain.pdf",
-    "subcortical_SVG": "./outputs/main_analyses/13_sensitivity_mPFC_striatopallidal_glass_brain/figures/Figure_sensitivity_adjusted_bilateral_caudate_putamen_pallidum_sampled_pink_nilearn_glass_brain.svg",
-    "prefrontal_values": "./outputs/main_analyses/13_sensitivity_mPFC_striatopallidal_glass_brain/tables/prefrontal_regional_SUVR_figure_values.csv",
-    "subcortical_values": "./outputs/main_analyses/13_sensitivity_mPFC_striatopallidal_glass_brain/tables/subcortical_regional_SUVR_figure_values.csv",
-    "sampled_colour_anchors": "./outputs/main_analyses/13_sensitivity_mPFC_striatopallidal_glass_brain/tables/sampled_blue_pink_colormap_anchors.csv"
+    "prefrontal_PNG": "/Users/freddylee/Desktop/Coding_repository/Python_analysis/metabolism_TRD_release_refresh_20261007/outputs/main_analyses/13_sensitivity_mPFC_striatopallidal_glass_brain/figures/Figure_sensitivity_adjusted_bilateral_vmPFC_dmPFC_medialOFC_sampled_blue_nilearn_glass_brain.png",
+    "prefrontal_PDF": "/Users/freddylee/Desktop/Coding_repository/Python_analysis/metabolism_TRD_release_refresh_20261007/outputs/main_analyses/13_sensitivity_mPFC_striatopallidal_glass_brain/figures/Figure_sensitivity_adjusted_bilateral_vmPFC_dmPFC_medialOFC_sampled_blue_nilearn_glass_brain.pdf",
+    "prefrontal_SVG": "/Users/freddylee/Desktop/Coding_repository/Python_analysis/metabolism_TRD_release_refresh_20261007/outputs/main_analyses/13_sensitivity_mPFC_striatopallidal_glass_brain/figures/Figure_sensitivity_adjusted_bilateral_vmPFC_dmPFC_medialOFC_sampled_blue_nilearn_glass_brain.svg",
+    "subcortical_PNG": "/Users/freddylee/Desktop/Coding_repository/Python_analysis/metabolism_TRD_release_refresh_20261007/outputs/main_analyses/13_sensitivity_mPFC_striatopallidal_glass_brain/figures/Figure_sensitivity_adjusted_bilateral_caudate_putamen_pallidum_sampled_pink_nilearn_glass_brain.png",
+    "subcortical_PDF": "/Users/freddylee/Desktop/Coding_repository/Python_analysis/metabolism_TRD_release_refresh_20261007/outputs/main_analyses/13_sensitivity_mPFC_striatopallidal_glass_brain/figures/Figure_sensitivity_adjusted_bilateral_caudate_putamen_pallidum_sampled_pink_nilearn_glass_brain.pdf",
+    "subcortical_SVG": "/Users/freddylee/Desktop/Coding_repository/Python_analysis/metabolism_TRD_release_refresh_20261007/outputs/main_analyses/13_sensitivity_mPFC_striatopallidal_glass_brain/figures/Figure_sensitivity_adjusted_bilateral_caudate_putamen_pallidum_sampled_pink_nilearn_glass_brain.svg",
+    "prefrontal_values": "/Users/freddylee/Desktop/Coding_repository/Python_analysis/metabolism_TRD_release_refresh_20261007/outputs/main_analyses/13_sensitivity_mPFC_striatopallidal_glass_brain/tables/prefrontal_regional_SUVR_figure_values.csv",
+    "subcortical_values": "/Users/freddylee/Desktop/Coding_repository/Python_analysis/metabolism_TRD_release_refresh_20261007/outputs/main_analyses/13_sensitivity_mPFC_striatopallidal_glass_brain/tables/subcortical_regional_SUVR_figure_values.csv",
+    "sampled_colour_anchors": "/Users/freddylee/Desktop/Coding_repository/Python_analysis/metabolism_TRD_release_refresh_20261007/outputs/main_analyses/13_sensitivity_mPFC_striatopallidal_glass_brain/tables/sampled_blue_pink_colormap_anchors.csv"
   }
 }

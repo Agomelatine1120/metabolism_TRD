@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "generated_at_utc": "2026-10-07T14:19:23.262897+00:00",
+  "generated_at_utc": "2026-10-07T17:48:54.289601+00:00",
   "analysis": "Complete AAL3 normative-SC MwC baseline and longitudinal analysis",
   "scope": {
     "metric": "MwC only",
@@ -18,7 +18,7 @@
     "HC_reference": 23,
     "iTBS": 31,
     "rTMS": 28,
-    "sham": 27
+    "sham": 26
   },
   "checks": {
     "upstream_AAL3_144_validation_PASS": true,
@@ -67,7 +67,7 @@
       "arm": "sham",
       "family": "26 MwC targets",
       "tested": 26,
-      "nominal_p_lt_0p05": 4,
+      "nominal_p_lt_0p05": 2,
       "fdr_q_lt_0p05": 0,
       "method": "paired t; post minus pre"
     },
@@ -76,7 +76,7 @@
       "arm": "iTBS",
       "family": "26 MwC targets",
       "tested": 26,
-      "nominal_p_lt_0p05": 6,
+      "nominal_p_lt_0p05": 3,
       "fdr_q_lt_0p05": 0,
       "method": "HC3 change-score OLS; age + sex"
     },
@@ -94,7 +94,7 @@
       "arm": "rTMS",
       "family": "26 MwC targets",
       "tested": 26,
-      "nominal_p_lt_0p05": 5,
+      "nominal_p_lt_0p05": 3,
       "fdr_q_lt_0p05": 0,
       "method": "HC3 change-score OLS; age + sex"
     },
@@ -110,10 +110,10 @@
   ],
   "inputs": {
     "subject_table": "inputs/mwc/normative_sc/age_sex_adjusted/subject_level_corticolimbic26_age_sex_adjusted_normativeSC10_MwC_wide.csv",
-    "subject_table_sha256": "b40e5fcc01f6de31202daef93da73394772a0c5665e4eabd837104c8c647233c",
+    "subject_table_sha256": "05704458c221586dc28dd03a14d904c649b160af17399b5892d246019d13d357",
     "baseline_table": "inputs/mwc/normative_sc/age_sex_adjusted/baseline_nTRD_vs_TRD1_age_sex_adjusted_MwC_HC3_all26.csv",
     "baseline_table_sha256": "7496d59bb0b977f6682caadc1024823d265ab5ebd1b433da048fc886264546e2",
     "upstream_validation": "inputs/mwc/normative_sc/validation_report.json",
-    "upstream_validation_sha256": "d0cef1b409ed3441ab3ffd37cf73734fa75da078e37b03ec5d5ca0b5ddb24b3b"
+    "upstream_validation_sha256": "8213a474aec3ac8a038a64f38a5227b266bde8fbe183cc8fd6b9272de7f3a9b4"
   }
 }

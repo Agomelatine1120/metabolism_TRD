@@ -6,9 +6,9 @@
     "TRD1": 35,
     "rTMS": 28,
     "iTBS": 31,
-    "sham": 27
+    "sham": 26
   },
-  "sessions": 255,
+  "sessions": 253,
   "input_policy": "Only final analysed participants and sessions are included",
   "PET": "GM > 0.3 individual-grey-matter-threshold wbSUVR; 144 retained AAL3 ROIs",
   "BOLD": "AAL3 spatial-mean time series without individual GM masking, represented by session-level GCMI matrices",

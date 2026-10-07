@@ -2,9 +2,9 @@
 
 ## Identifier scheme
 
-- All cross-file identifiers use `P001`–`P169`.
+- All cross-file identifiers use `P001`–`P168`.
 - Public keys were assigned only within the analyzed roster.
-- PET and MwC records are strict subsets of those 169 keys.
+- PET and MwC records are strict subsets of those 168 keys.
 - `inputs/core/analysis_population_roster.csv` locks the exact participants and
   available PET/MwC sessions used by this package.
 - The private original-to-public crosswalk is not bundled or referenced.

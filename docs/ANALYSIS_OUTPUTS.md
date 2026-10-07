@@ -49,8 +49,8 @@ complete all-edge paired-test outputs.
 ## Locked input-population audit
 
 The input package is population-restricted before analysis. The clinical input
-exactly equals the 169-participant roster; PET and full GCMI/MwC inputs exactly
-equal their 255 permitted subject-sessions. The specialized nTRD/TRD1 MwC
+exactly equals the 168-participant roster; PET and full GCMI/MwC inputs exactly
+equal their 253 permitted subject-sessions. The specialized nTRD/TRD1 MwC
 input exactly equals its prespecified 60-participant baseline subset. These are equality checks rather
 than subset checks against larger source files.
 

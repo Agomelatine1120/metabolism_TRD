@@ -53,7 +53,7 @@ DEFAULT_OUTPUT = PROJECT_ROOT / "outputs/main_analyses/07_age_sex_adjusted_MwC"
 
 ARMS = ["iTBS", "rTMS", "sham"]
 ACTIVE_ARMS = ["iTBS", "rTMS"]
-EXPECTED_AVAILABLE_PAIRS = {"iTBS": 31, "rTMS": 28, "sham": 27}
+EXPECTED_AVAILABLE_PAIRS = {"iTBS": 31, "rTMS": 28, "sham": 26}
 SEED = 20260903
 
 
@@ -376,7 +376,7 @@ def plot_heatmap(
         0.5,
         -0.025,
         (
-            "Paired subjects: iTBS n=31, rTMS n=28, sham n=27. "
+            "Paired subjects: iTBS n=31, rTMS n=28, sham n=26. "
             "* uncorrected paired P<.05; † BH-FDR q<.05 across 26 targets. "
             "MwC was computed in all 144 retained AAL3 nodes before the 26 targets were extracted."
         ),

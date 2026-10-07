@@ -25,7 +25,7 @@
   },
   "same_renderer_as_original": true,
   "same_node_scale_as_original_four_panels": 1.581855005654741,
-  "same_edge_scale_as_original_four_panels": 1.716135524098861,
+  "same_edge_scale_as_original_four_panels": 1.644499100577166,
   "checks": {
     "all_adjusted_node_values_finite": true,
     "all_adjusted_edge_values_finite": true,
@@ -35,13 +35,13 @@
     "edge_table_rows_168": true
   },
   "outputs": {
-    "individual_PNG": "./outputs/main_analyses/11_SGC_26ROI_figures/figures/corticolimbic_circular_26ROI_bilateral_SGC_TRD_vs_nonTRD_baseline_severity_adjusted.png",
-    "individual_PDF": "./outputs/main_analyses/11_SGC_26ROI_figures/figures/corticolimbic_circular_26ROI_bilateral_SGC_TRD_vs_nonTRD_baseline_severity_adjusted.pdf",
-    "individual_SVG": "./outputs/main_analyses/11_SGC_26ROI_figures/figures/corticolimbic_circular_26ROI_bilateral_SGC_TRD_vs_nonTRD_baseline_severity_adjusted.svg",
-    "five_panel_PNG": "./outputs/main_analyses/11_SGC_26ROI_figures/figures/corticolimbic_circular_26ROI_bilateral_SGC_cross_sectional_with_baseline_severity_adjusted.png",
-    "five_panel_PDF": "./outputs/main_analyses/11_SGC_26ROI_figures/figures/corticolimbic_circular_26ROI_bilateral_SGC_cross_sectional_with_baseline_severity_adjusted.pdf",
-    "five_panel_SVG": "./outputs/main_analyses/11_SGC_26ROI_figures/figures/corticolimbic_circular_26ROI_bilateral_SGC_cross_sectional_with_baseline_severity_adjusted.svg",
-    "regional_model_table": "./outputs/main_analyses/11_SGC_26ROI_figures/tables/baseline_severity_adjusted_TRD1_vs_nTRD_regional26_SGC.csv",
-    "connectivity_model_table": "./outputs/main_analyses/11_SGC_26ROI_figures/tables/baseline_severity_adjusted_TRD1_vs_nTRD_connectivity168_SGC.csv"
+    "individual_PNG": "/Users/freddylee/Desktop/Coding_repository/Python_analysis/metabolism_TRD_release_refresh_20261007/outputs/main_analyses/11_SGC_26ROI_figures/figures/corticolimbic_circular_26ROI_bilateral_SGC_TRD_vs_nonTRD_baseline_severity_adjusted.png",
+    "individual_PDF": "/Users/freddylee/Desktop/Coding_repository/Python_analysis/metabolism_TRD_release_refresh_20261007/outputs/main_analyses/11_SGC_26ROI_figures/figures/corticolimbic_circular_26ROI_bilateral_SGC_TRD_vs_nonTRD_baseline_severity_adjusted.pdf",
+    "individual_SVG": "/Users/freddylee/Desktop/Coding_repository/Python_analysis/metabolism_TRD_release_refresh_20261007/outputs/main_analyses/11_SGC_26ROI_figures/figures/corticolimbic_circular_26ROI_bilateral_SGC_TRD_vs_nonTRD_baseline_severity_adjusted.svg",
+    "five_panel_PNG": "/Users/freddylee/Desktop/Coding_repository/Python_analysis/metabolism_TRD_release_refresh_20261007/outputs/main_analyses/11_SGC_26ROI_figures/figures/corticolimbic_circular_26ROI_bilateral_SGC_cross_sectional_with_baseline_severity_adjusted.png",
+    "five_panel_PDF": "/Users/freddylee/Desktop/Coding_repository/Python_analysis/metabolism_TRD_release_refresh_20261007/outputs/main_analyses/11_SGC_26ROI_figures/figures/corticolimbic_circular_26ROI_bilateral_SGC_cross_sectional_with_baseline_severity_adjusted.pdf",
+    "five_panel_SVG": "/Users/freddylee/Desktop/Coding_repository/Python_analysis/metabolism_TRD_release_refresh_20261007/outputs/main_analyses/11_SGC_26ROI_figures/figures/corticolimbic_circular_26ROI_bilateral_SGC_cross_sectional_with_baseline_severity_adjusted.svg",
+    "regional_model_table": "/Users/freddylee/Desktop/Coding_repository/Python_analysis/metabolism_TRD_release_refresh_20261007/outputs/main_analyses/11_SGC_26ROI_figures/tables/baseline_severity_adjusted_TRD1_vs_nTRD_regional26_SGC.csv",
+    "connectivity_model_table": "/Users/freddylee/Desktop/Coding_repository/Python_analysis/metabolism_TRD_release_refresh_20261007/outputs/main_analyses/11_SGC_26ROI_figures/tables/baseline_severity_adjusted_TRD1_vs_nTRD_connectivity168_SGC.csv"
   }
 }

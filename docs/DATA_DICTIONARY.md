@@ -7,7 +7,7 @@ analyzed participant.
 
 | Field | Meaning |
 |---|---|
-| `subject_key` | Cross-file public key `P001`–`P169` |
+| `subject_key` | Cross-file public key `P001`–`P168` |
 | `analysis_cohort` | `HC`, `nTRD`, `TRD1`, or `TRD2` |
 | `analysis_arm` | `iTBS`, `rTMS`, `sham`, or blank when not applicable |
 | `sex` | Encoded sex covariate used by the analysis |
@@ -19,7 +19,7 @@ analyzed participant.
 
 ## Locked analysis population
 
-`inputs/core/analysis_population_roster.csv` contains exactly the same 169
+`inputs/core/analysis_population_roster.csv` contains exactly the same 168
 public keys as the clinical workbook, their analysis cohort/arm, and four
 binary session flags: `pet_ses_01`, `pet_ses_02`, `mwc_ses_01`, and
 `mwc_ses_02`. These flags define the exact permitted subject/session records in

@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "generated_at_utc": "2026-10-07T14:17:38.746341+00:00",
+  "generated_at_utc": "2026-10-07T17:47:08.714716+00:00",
   "method": {
     "metric": "MwC only",
     "structural_connectome": "dTOR-985 group-normative direct streamline-count top-10% mask",
@@ -12,7 +12,7 @@
     "missing_policy": "isolated nodes remain missing; no imputation or zero fill"
   },
   "checks": {
-    "sessions_255": true,
+    "sessions_253": true,
     "retained_AAL3_nodes_144": true,
     "possible_undirected_edges_10296": true,
     "fixed_dTOR_normative_SC_edges_1030": true,
@@ -29,11 +29,11 @@
     "maximum_abs_error_vs_reference_full_144": 1.4210854715202004e-14,
     "maximum_abs_error_vs_reference_selected_26": 1.4210854715202004e-14,
     "maximum_valid_row_sum_error": 2.220446049250313e-16,
-    "total_missing_MwC_cells": 2231
+    "total_missing_MwC_cells": 2212
   },
   "inputs": {
     "session_bundle": "inputs/mwc/normative_sc/session_gcmi_pet_AAL3_144.npz",
-    "session_bundle_sha256": "73218ec26331c8596a08825b5d1adb451b0982bb7b5d30f711514d3019a4bcc6",
+    "session_bundle_sha256": "449be91e8a17a2261dd9ac30a472880a40f7a6e0c085fbe1dcca45e17842007f",
     "structural_mask": "inputs/mwc/normative_sc/normative_SC_top10_mask.npz",
     "structural_mask_sha256": "498182956c2ec5d7513d09a3f52155e15093a993c5e56f0b2ddc7ca3e3ce3e9d"
   },

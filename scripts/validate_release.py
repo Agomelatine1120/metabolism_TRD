@@ -67,27 +67,27 @@ def main() -> int:
     contract = json.loads((ROOT / "inputs/core/analysis_contract.json").read_text())
     gcmi = np.load(ROOT / "inputs/mwc/normative_sc/session_gcmi_pet_AAL3_144.npz", allow_pickle=True)
 
-    expected_keys = [f"P{index:03d}" for index in range(1, 170)]
+    expected_keys = [f"P{index:03d}" for index in range(1, 169)]
     checks["clinical_population"] = (
-        len(clinical) == 169
+        len(clinical) == 168
         and clinical.subject_key.astype(str).tolist() == expected_keys
         and clinical.analysis_cohort.value_counts().to_dict()
-        == {"TRD2": 86, "TRD1": 35, "nTRD": 25, "HC": 23}
+        == {"TRD2": 85, "TRD1": 35, "nTRD": 25, "HC": 23}
         and clinical.loc[clinical.analysis_cohort.eq("TRD2"), "analysis_arm"].value_counts().to_dict()
-        == {"iTBS": 31, "rTMS": 28, "sham": 27}
+        == {"iTBS": 31, "rTMS": 28, "sham": 26}
     )
     checks["roster_population"] = (
         roster.subject_key.astype(str).tolist() == expected_keys
         and roster[["pet_ses_01", "pet_ses_02", "mwc_ses_01", "mwc_ses_02"]].sum().to_dict()
-        == {"pet_ses_01": 169, "pet_ses_02": 86, "mwc_ses_01": 169, "mwc_ses_02": 86}
+        == {"pet_ses_01": 168, "pet_ses_02": 85, "mwc_ses_01": 168, "mwc_ses_02": 85}
     )
     pet_columns = pet.columns[1:].astype(str)
     pet_keys = pet_columns.str.extract(r"(P\d{3})", expand=False)
-    checks["pet_input"] = pet.shape == (144, 256) and pet_keys.notna().all() and set(pet_keys) == set(expected_keys)
+    checks["pet_input"] = pet.shape == (144, 254) and pet_keys.notna().all() and set(pet_keys) == set(expected_keys)
     gcmi_keys = np.asarray(gcmi["subject_key"]).astype(str)
     checks["gcmi_input"] = (
-        np.asarray(gcmi["gcmi_raw"]).shape == (255, 144, 144)
-        and np.asarray(gcmi["pet_wbSUVR"]).shape == (255, 144)
+        np.asarray(gcmi["gcmi_raw"]).shape == (253, 144, 144)
+        and np.asarray(gcmi["pet_wbSUVR"]).shape == (253, 144)
         and set(gcmi_keys) == set(expected_keys)
         and all(re.fullmatch(r"P\d{3}", key) for key in gcmi_keys)
     )
@@ -99,8 +99,8 @@ def main() -> int:
     )
     checks["analysis_contract"] = contract == {
         "status": "PASS",
-        "participants": {"HC": 23, "nTRD": 25, "TRD1": 35, "rTMS": 28, "iTBS": 31, "sham": 27},
-        "sessions": 255,
+        "participants": {"HC": 23, "nTRD": 25, "TRD1": 35, "rTMS": 28, "iTBS": 31, "sham": 26},
+        "sessions": 253,
         "input_policy": "Only final analysed participants and sessions are included",
         "PET": "GM > 0.3 individual-grey-matter-threshold wbSUVR; 144 retained AAL3 ROIs",
         "BOLD": "AAL3 spatial-mean time series without individual GM masking, represented by session-level GCMI matrices",
@@ -199,8 +199,8 @@ def main() -> int:
 
     report = {
         "status": "PASS" if all(checks.values()) else "FAIL",
-        "population": {"HC": 23, "nTRD": 25, "TRD1": 35, "rTMS": 28, "iTBS": 31, "sham": 27},
-        "sessions": 255,
+        "population": {"HC": 23, "nTRD": 25, "TRD1": 35, "rTMS": 28, "iTBS": 31, "sham": 26},
+        "sessions": 253,
         "models": contract["models"],
         "results": {
             "primary_p_lt_0p01": {"regional_SUVR": 8, "metabolic_connectivity": 19, "MwC": 3},

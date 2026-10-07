@@ -6,9 +6,9 @@
     "TRD1": 35,
     "rTMS": 28,
     "iTBS": 31,
-    "sham": 27
+    "sham": 26
   },
-  "sessions": 255,
+  "sessions": 253,
   "models": {
     "HC_reference": "age + sex",
     "group": "age + sex",

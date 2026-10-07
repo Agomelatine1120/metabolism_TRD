@@ -9,14 +9,14 @@ mwc_adjusted_26 = pd.read_csv(MWC_ADJUSTED_26_FILE)
 mwc_adjusted_columns = [f"MwC_{name}" for name in roi.ROI]
 assert len(mwc_adjusted_columns) == 26
 assert set(mwc_adjusted_columns).issubset(mwc_adjusted_26.columns)
-assert len(mwc_adjusted_26) == 255
+assert len(mwc_adjusted_26) == 253
 
 mwc_baseline_26 = mwc_adjusted_26.loc[
     mwc_adjusted_26.session.eq("ses-01")
     & mwc_adjusted_26.analysis_cohort.isin(["nTRD", "TRD1", "TRD2"])
 ].copy()
 assert mwc_baseline_26.groupby("analysis_cohort").size().to_dict() == {
-    "TRD1": 35, "TRD2": 86, "nTRD": 25,
+    "TRD1": 35, "TRD2": 85, "nTRD": 25,
 }
 mwc_group_means_26 = {
     group: mwc_baseline_26.loc[
@@ -35,7 +35,7 @@ weighted_dsc = float(
 )
 mwc_spatial_summary = pd.DataFrame([{
     "n_ROIs": 26, "cortical_ROIs": 12, "limbic_ROIs": 14,
-    "TRD1_n": 35, "TRD2_n": 86,
+    "TRD1_n": 35, "TRD2_n": 85,
     "pearson_r": float(pearson_r), "pearson_p_two_sided": float(pearson_p),
     "same_direction_agreement": same_direction, "DSC_weighted": weighted_dsc,
     "MwC_input": "HC-only age/sex residual z scores; 26 ROIs extracted after all-144 computation",
