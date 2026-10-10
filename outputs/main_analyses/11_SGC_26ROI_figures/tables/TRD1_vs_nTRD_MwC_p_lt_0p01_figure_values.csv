@@ -1,4 +1,0 @@
-AAL3_ID,ROI,display_label,voxel_count_on_PET_grid,encoded_value,display_color,nTRD_mean_age_sex_adjusted_z,TRD1_mean_age_sex_adjusted_z,TRD1_minus_nTRD_HC_SD,hc3_t,hc3_p_uncorrected,direction,selection_rule
-5,Frontal_Mid_2_L,Lt. MFG,4507,2,#9AC3F8,-0.4031443005060639,-1.893879134309972,-1.5110571302865623,-3.117320640237223,0.0028794255670029,lower in TRD,HC3 uncorrected p < 0.01
-3,Frontal_Sup_2_L,Lt. SFG,4870,1,#BACFEA,-0.3925066129296087,-1.6667394204591244,-1.275233626519891,-2.8206382871753455,0.006617882680354,lower in TRD,HC3 uncorrected p < 0.01
-4,Frontal_Sup_2_R,Rt. SFG,5126,1,#BACFEA,-0.2038667366832699,-1.8120029231631165,-1.493697423105149,-2.666621397990021,0.0099971300346507,lower in TRD,HC3 uncorrected p < 0.01

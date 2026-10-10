@@ -1,11 +1,5 @@
 .DS_Store
-.ipynb_checkpoints/
-.matplotlib/
 __pycache__/
 *.py[cod]
+.ipynb_checkpoints/
 .venv/
-venv/
-MetaFL_private_subject_id_crosswalk*.csv
-*_executed.ipynb
-notebooks/_source_monolithic/
-inputs/core/corticolimbic_12x12_ROI_definition.csv

@@ -1,118 +1,67 @@
-# TRD metabolism analysis workflow
+# Metabolism in treatment-resistant depression
 
-This repository contains the pseudonymized inputs, ordered notebooks,
-statistical outputs, and figure components needed to rerun the study analyses
-of regional cerebral metabolism, metabolic connectivity, and
-metabolism-weighted centrality in non-treatment-resistant depression (non-TRD),
-treatment-resistant depression (TRD), and longitudinal brain-stimulation data.
+This repository contains pseudonymized inputs, executable notebooks, statistical
+tables, and figure components for analyses of regional cerebral metabolism,
+metabolic connectivity, and metabolism-weighted centrality (MwC) in depression.
 
-## Analysis framework
+## Analysis design
 
-The workflow combines FDG-PET and resting-state fMRI at three levels:
+The formal circuit comprises 12 frontal and 14 limbic regions. Regional SUVR
+and MwC therefore contain 26 features, while the frontal-to-limbic Cartesian
+product contains 168 metabolic-connectivity edges.
 
-1. **Regional metabolism:** whole-brain-normalized FDG uptake (SUVR).
-2. **Inter-regional metabolic connectivity:** individualized deviation from a
-   healthy reference network, estimated with a reference-and-perturbed-network
-   approach.
-3. **Metabolism-weighted centrality (MwC):** regional centrality derived from
-   GCMI functional dependence, normative structural-connectivity constraints,
-   and the metabolism of connected regions.
+MwC is calculated from three inputs: generalized canonical-correlation mutual
+information (GCMI) estimated from corrected resting-state BOLD signals,
+whole-brain-normalized FDG-PET SUVR, and a fixed top-10% normative structural
+connectivity mask. The computation uses a 140-region AAL3 space. Four regions
+with unavailable source measurements are excluded before calculation:
+`Thal_VA_L`, `Thal_VA_R`, `Thal_LGN_L`, and `Thal_LGN_R`. Missing MwC values
+are retained as missing; no imputation is performed.
 
-All measures are expressed relative to a healthy-control reference. The formal
-analysis space contains **12 cortical and 14 limbic ROIs**, including bilateral
-subgenual cingulate cortex (SGC). This produces **26 regional/MwC features and
-168 cortical-to-limbic metabolic-connectivity edges**. GCMI matrices are used
-only to calculate MwC.
+## Samples and statistical models
 
-## Analysis samples
-
-The dataset contains 168 analyzed participants:
-
-| Cohort | Analysis role | n |
+| Cohort or arm | Role | n |
 |---|---|---:|
 | Healthy controls | Healthy reference | 23 |
-| non-TRD | Clinical comparison group | 25 |
-| TRD1 | Primary TRD group analysis | 35 |
-| TRD2 | Independent spatial comparison and stimulation cohort | 85 |
+| non-TRD | Baseline comparison | 25 |
+| TRD1 | Baseline comparison | 35 |
+| rTMS | TRD2 PET pairs | 38 |
+| iTBS | TRD2 PET pairs | 43 |
+| sham | TRD2 PET pairs | 38 |
 
-Baseline non-TRD-versus-TRD1 models adjust for age and sex. TRD1
-and TRD2 deviation profiles are compared using spatial Pearson correlation,
-directional agreement, and a magnitude-weighted signed Dice coefficient.
+The PET input uses GM > 0.5 and contains 119 paired TRD2 participants. GCMI
+matrices were derived from corrected BOLD signals without individual
+gray-matter masking. The MwC candidate sample contains 36 rTMS, 39 iTBS, and
+35 sham participants. Featurewise complete-pair counts are 34–36, 37–39, and
+32–35, respectively.
 
-The longitudinal dataset contains **28 rTMS, 31 iTBS, and 26 sham** paired
-participants. Within-arm changes are assessed with paired-sample t-tests. The
-longitudinal plotting step programmatically displays all, and only, active-arm
-metabolic-connectivity edges meeting **paired `p < .01`**. Active-versus-sham
-group-by-time models adjust for age and sex. Clinical associations
-use partial Spearman correlations between post-minus-pre imaging change and
-pre-minus-post HDRS-17 improvement, adjusting for age and sex.
+Healthy-reference deviations and between-group models adjust for age and sex.
+Within-arm pre–post tests are paired t-tests without covariates. Active-versus-
+sham change models and imaging-change/HDRS-17 partial Spearman correlations
+adjust for age and sex. Baseline sensitivity models additionally adjust for
+baseline HDRS-17. Sensitivity statistics are included as tables; no separate
+sensitivity figure is generated.
 
-## Analyses included
-
-The workflow performs the following operations:
-
-1. Loads the minimized clinical, PET, GCMI, atlas, ROI-definition, and
-   normative structural-connectivity inputs.
-2. Constructs healthy-control references for regional SUVR, individualized
-   metabolic connectivity, and MwC.
-3. Calculates participant-level deviations for the 26 regional/MwC features
-   and 168 cortical-to-limbic metabolic-connectivity edges.
-4. Runs baseline non-TRD-versus-TRD1 models and TRD1–TRD2 spatial comparisons.
-5. Calculates five participant-level global metabolic indices.
-6. Runs paired pre-to-post analyses for rTMS, iTBS, and sham;
-   active-versus-sham group-by-time models; and HDRS-17 partial Spearman
-   analyses.
-7. Repeats the baseline group comparison with baseline HDRS-17 included as an
-   additional covariate.
-8. Generates statistical workbooks, plotting data, heatmaps, circle diagrams,
-   raincloud plots, correlation plots, and Nilearn glass-brain components.
-
-Numerical results are stored in the generated workbooks under `outputs/`.
-
-## Repository structure
+## Repository contents
 
 | Path | Contents |
 |---|---|
-| `notebooks/` | Five ordered MwC notebooks, ten ordered Main notebooks, and one complete runner |
-| `pipeline_steps/` | Canonical Python source corresponding to each notebook step |
-| `scripts/` | Supporting calculations and figure generation |
-| `inputs/` | Minimized pseudonymized inputs restricted to the locked analysis population |
-| `outputs/mwc/` | MwC values, statistics, spatial comparisons, and figure components |
-| `outputs/main_analyses/` | Regional, connectivity, longitudinal, global-index, sensitivity, and figure outputs |
-| `docs/` | Workflow, data dictionary, analysis map, and analysis-output mapping |
-| `manifests/` | File inventories, checksums, and machine-readable validation results |
+| `inputs/clinical_data.csv` | One pseudonymized row per included participant |
+| `inputs/session_pet_gcmi_AAL3_140.npz` | Session metadata, 140-region PET vectors, and GCMI matrices |
+| `inputs/normative_SC_top10_mask.npz` | Fixed 140-region normative structural mask |
+| `inputs/corticolimbic_12x14_ROI_definition.csv` | Formal 26-region circuit definition |
+| `analysis/` | Reusable analysis and figure-generation code |
+| `notebooks/` | Ten Main steps and six MwC steps, saved with inline results |
+| `outputs/tables/` | Full-precision statistical results |
+| `outputs/figures/` | Standalone analysis figures in PNG and PDF formats |
 
-For a detailed analysis-to-output mapping, see
-[`docs/ANALYSIS_OUTPUTS.md`](docs/ANALYSIS_OUTPUTS.md). For the precise execution
-order, see [`docs/NOTEBOOK_WORKFLOW.md`](docs/NOTEBOOK_WORKFLOW.md).
+All participant identifiers are study-independent keys (`H###`, `N###`,
+`T###`, and `L###`). The inputs contain only participants and variables used by
+the analyses in this repository.
 
-## Input package and population lock
+## Installation and execution
 
-Participant-level inputs are restricted before analysis to the prespecified
-roster. The workflow does not load a larger participant pool and then remove
-unused participants downstream.
-
-- `inputs/core/analysis_population_roster.csv` defines every permitted public
-  participant/session record.
-- `inputs/core/clinical_data.xlsx` contains exactly 168 analyzed participants.
-- `inputs/core/AAL3_PET_wbSUVR_Table.xlsx` contains 253 permitted PET sessions
-  across 144 retained AAL3 regions: 168 baseline and 85 post-treatment. PET
-  values use the individual grey-matter threshold **GM > 0.3**.
-- `inputs/mwc/normative_sc/session_gcmi_pet_AAL3_144.npz` contains the same
-  253 permitted PET/GCMI sessions. GCMI matrices were derived from corrected
-  BOLD signals without individual grey-matter masking.
-- Longitudinal inputs contain 28 rTMS, 31 iTBS, and 26 sham participants with
-  paired PET and fMRI data.
-
-All cross-file identifiers use public keys (`P001`–`P168`). Direct identifiers,
-unused participants, and unneeded clinical variables are not included. These
-data are pseudonymized, not anonymous, and the repository should remain private
-unless sharing has been separately authorized.
-
-## Installation
-
-Python 3.11 or later is recommended. Git LFS is required for the configured
-binary inputs and outputs.
+Python 3.11 or later and Git LFS are recommended.
 
 ```bash
 git lfs install
@@ -122,47 +71,10 @@ git lfs pull
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
+python analysis/run_all.py
+python analysis/figures.py
 ```
 
-## Run the complete workflow
-
-Start Jupyter from the repository root and run
-`notebooks/00_run_all_steps.ipynb`. The same workflow can be executed from the
-command line:
-
-```bash
-export METAFL_ROOT="$PWD"
-jupyter nbconvert --to notebook --execute notebooks/00_run_all_steps.ipynb \
-  --inplace \
-  --ExecutePreprocessor.timeout=10800
-```
-
-The runner executes MwC 01–05 first and Main 01–10 second. The 15 chapter
-notebooks are committed with execution counts, numerical outputs, and compact
-table-and-figure previews at the bottom so their results are visible directly on GitHub. Full-resolution
-PNG, PDF, and SVG components and their plotting workbooks are stored under
-`outputs/`.
-
-Final multi-panel sizing, panel lettering, and manually positioned anatomical
-arrows are layout operations and are not part of the numerical workflow.
-
-## Step guide
-
-| Analysis task | Step |
-|---|---|
-| Cohort and treatment-arm characteristics | Main 02 |
-| Regional SUVR, connectivity, and MwC group analyses | Main 03; MwC 02–05 |
-| TRD1–TRD2 spatial comparisons | Main 06; MwC 03 |
-| Regional/connectivity/MwC heatmaps and raincloud plots | Main 07; MwC 03–05 |
-| Cross-sectional and longitudinal circle diagrams | Main 08 and Main 10 |
-| Five global metabolic indices | Main 09 |
-| Paired stimulation effects, group-by-time models, and HDRS-17 associations | Main 04–07 |
-| Baseline-HDRS-17-adjusted sensitivity analyses | Main 03, 07, and 10 |
-| Demographic and statistical summary tables | Main 02–05 and MwC 04–05 |
-
-## Validation
-
-`manifests/validation.json` records the input roster, model definitions,
-significance counts, dynamic longitudinal selection, notebook execution state,
-and deidentification checks. File inventories and SHA-256 checksums are stored
-in the same directory.
+The notebooks may also be opened and run in numerical order. Each committed
+notebook contains its executed tables and figures directly below the relevant
+cells.
