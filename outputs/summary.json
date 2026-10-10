@@ -1,33 +1,9 @@
 {
   "status": "PASS",
-  "MwC_nodes": 140,
-  "SC_edges": 973,
-  "excluded_ROIs": [
-    "Thal_VA_L",
-    "Thal_VA_R",
-    "Thal_LGN_L",
-    "Thal_LGN_R"
-  ],
-  "sessions": 321,
-  "participants": 202,
   "primary_p_lt_0p01": {
     "Regional SUVR": 8,
     "Metabolic connectivity": 16,
     "MwC": 3
   },
-  "active_paired_p_lt_0p01": 10,
-  "MwC_pair_N": {
-    "iTBS": [
-      37,
-      39
-    ],
-    "rTMS": [
-      34,
-      36
-    ],
-    "sham": [
-      32,
-      35
-    ]
-  }
+  "active_paired_p_lt_0p01": 10
 }

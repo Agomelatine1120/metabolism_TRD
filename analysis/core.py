@@ -196,7 +196,6 @@ def load_data() -> dict:
         "mwc": mwc, "mwc_z": mwc_z, "edge_names": edge_names,
         "roi_names": target_names, "roi_labels": [roi_label(name) for name in target_names],
         "edge_labels": [f"{roi_label(a)}–{roi_label(b)}" for a, b in edge_names],
-        "excluded": ["Thal_VA_L", "Thal_VA_R", "Thal_LGN_L", "Thal_LGN_R"],
     }
 
 
@@ -517,27 +516,14 @@ def write_outputs() -> dict:
     longitudinal.loc[longitudinal.analysis_arm.isin(["rTMS", "iTBS"]) & longitudinal.paired_p_lt_0p05].to_csv(TABLES / "active_all_modalities_p_lt_005.csv", index=False)
     spatial = spatial_results(data)
     spatial.to_csv(TABLES / "spatial_correlation_summary.csv", index=False)
-    (
-        longitudinal.loc[longitudinal.modality.eq("MwC")]
-        .groupby("analysis_arm").n.agg(["min", "max"])
-        .rename(columns={"min": "minimum_featurewise_pair_N", "max": "maximum_featurewise_pair_N"})
-        .reset_index().to_csv(TABLES / "MwC_featurewise_pair_N_by_arm.csv", index=False)
-    )
     metrics, group_indexes, paired_indexes = global_index_results(data)
     metrics.to_csv(TABLES / "five_global_indexes_deidentified.csv.gz", index=False, compression="gzip")
     group_indexes.to_csv(TABLES / "global_indexes_nTRD_TRD_statistics.csv", index=False)
     paired_indexes.to_csv(TABLES / "global_indexes_active_pre_post_statistics.csv", index=False)
     summary = {
-        "status": "PASS", "MwC_nodes": 140, "SC_edges": 973,
-        "excluded_ROIs": data["excluded"],
-        "sessions": len(data["meta"]),
-        "participants": int(data["meta"].participant_id.nunique()),
+        "status": "PASS",
         "primary_p_lt_0p01": {key: int(value.p_lt_0p01.sum()) for key, value in primary.items()},
         "active_paired_p_lt_0p01": int((longitudinal.analysis_arm.isin(["rTMS", "iTBS"]) & longitudinal.paired_p_lt_0p01).sum()),
-        "MwC_pair_N": {
-            arm: [int(group.n.min()), int(group.n.max())]
-            for arm, group in longitudinal.loc[longitudinal.modality.eq("MwC")].groupby("analysis_arm")
-        },
     }
     (OUTPUT / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
     return summary
