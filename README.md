@@ -17,6 +17,7 @@ metabolism-weighted centrality (MwC) analyses.
 
 All participant IDs are deidentified. The repository includes only the data
 used in the analyses.
+Reported p values are uncorrected.
 
 ## Contents
 

@@ -246,7 +246,9 @@ def run_all_figures():
     groups={cohort:data["edge"][baseline&meta.analysis_cohort.eq(cohort)] for cohort in ["nTRD","TRD1","TRD2"]}
     connectivity_heatmaps(groups,data["roi_labels"][:12],data["roi_labels"][12:])
     circles(data);longitudinal_panels(data);spatial_plot(data);global_index_figures(data)
-    return sorted(str(path.name) for path in FIGURES.glob("*.png"))
+    from ten_edge_direction_and_clinical import main as ten_edge_main
+    ten_edge_main()
+    return sorted(str(path.relative_to(FIGURES)) for path in FIGURES.rglob("*.png"))
 
 
 if __name__ == "__main__":

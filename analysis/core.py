@@ -11,7 +11,6 @@ import numpy as np
 import pandas as pd
 import statsmodels.api as sm
 from scipy import stats
-from statsmodels.stats.multitest import multipletests
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -40,15 +39,6 @@ def roi_label(name: str) -> str:
         return name
     region, side = match.groups()
     return f"{'Lt.' if side == 'L' else 'Rt.'}{ALIASES.get(region, region)}"
-
-
-def bh(values: np.ndarray) -> np.ndarray:
-    values = np.asarray(values, dtype=float)
-    output = np.full(values.shape, np.nan)
-    valid = np.isfinite(values)
-    if valid.any():
-        output[valid] = multipletests(values[valid], method="fdr_bh")[1]
-    return output
 
 
 def partial_corr_matrix(values: np.ndarray, covariates: np.ndarray) -> np.ndarray:
@@ -225,7 +215,6 @@ def feature_model(values, metadata, names, modality, sensitivity=False):
             "p_uncorrected": float(fit.pvalues["group_TRD1"]),
         })
     result = pd.DataFrame(rows)
-    result["q_fdr_BH_within_modality"] = bh(result.p_uncorrected)
     result["p_lt_0p01"] = result.p_uncorrected.lt(.01)
     result["p_lt_0p05"] = result.p_uncorrected.lt(.05)
     return result.sort_values("p_uncorrected", kind="stable").reset_index(drop=True)
@@ -324,14 +313,6 @@ def longitudinal_results(data=None):
     result = pd.DataFrame(rows)
     result["paired_p_lt_0p01"] = result.paired_p_uncorrected.lt(.01)
     result["paired_p_lt_0p05"] = result.paired_p_uncorrected.lt(.05)
-    result["paired_q_fdr_BH_within_arm_modality"] = np.nan
-    for _, index in result.groupby(["analysis_arm", "modality"]).groups.items():
-        result.loc[index, "paired_q_fdr_BH_within_arm_modality"] = bh(result.loc[index, "paired_p_uncorrected"])
-    result["interaction_q_fdr_BH_within_arm_modality"] = np.nan
-    result["HDRS_q_fdr_BH_within_arm_modality"] = np.nan
-    for _, index in result.loc[result.analysis_arm.isin(["rTMS", "iTBS"])].groupby(["analysis_arm", "modality"]).groups.items():
-        result.loc[index, "interaction_q_fdr_BH_within_arm_modality"] = bh(result.loc[index, "interaction_p_uncorrected"])
-        result.loc[index, "HDRS_q_fdr_BH_within_arm_modality"] = bh(result.loc[index, "HDRS_p_uncorrected"])
     result["imaging_change_definition"] = "post minus pre HC-referenced deviation"
     result["HDRS_improvement_definition"] = "pre minus post"
     return result
@@ -468,7 +449,6 @@ def global_index_results(data=None):
             "p_uncorrected": float(fit.pvalues["group_TRD1"]),
         })
     group = pd.DataFrame(group_rows)
-    group["q_fdr_BH_5"] = bh(group.p_uncorrected)
 
     active = metrics.loc[
         metrics.analysis_cohort.eq("TRD2") & metrics.analysis_arm.isin(["rTMS", "iTBS"])
@@ -490,7 +470,6 @@ def global_index_results(data=None):
             "p_uncorrected": float(test.pvalue),
         })
     paired = pd.DataFrame(paired_rows)
-    paired["q_fdr_BH_5"] = bh(paired.p_uncorrected)
     return metrics, group, paired
 
 
